@@ -4,8 +4,10 @@ import com.lvcong.emprise.bean.TravelScenic;
 import com.lvcong.emprise.bean.TravelScenicExample;
 import com.lvcong.emprise.bean.TravelScenicKey;
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+@Mapper
 public interface TravelScenicMapper {
     long countByExample(TravelScenicExample example);
 

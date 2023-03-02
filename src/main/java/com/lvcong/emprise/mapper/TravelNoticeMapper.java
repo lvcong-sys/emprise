@@ -3,8 +3,10 @@ package com.lvcong.emprise.mapper;
 import com.lvcong.emprise.bean.TravelNotice;
 import com.lvcong.emprise.bean.TravelNoticeExample;
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+@Mapper
 public interface TravelNoticeMapper {
     long countByExample(TravelNoticeExample example);
 

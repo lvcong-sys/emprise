@@ -3,8 +3,11 @@ package com.lvcong.emprise.mapper;
 import com.lvcong.emprise.bean.SysUser;
 import com.lvcong.emprise.bean.SysUserExample;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface SysUserMapper {
     long countByExample(SysUserExample example);
 

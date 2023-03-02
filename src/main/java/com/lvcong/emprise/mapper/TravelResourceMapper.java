@@ -3,8 +3,10 @@ package com.lvcong.emprise.mapper;
 import com.lvcong.emprise.bean.TravelResource;
 import com.lvcong.emprise.bean.TravelResourceExample;
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+@Mapper
 public interface TravelResourceMapper {
     long countByExample(TravelResourceExample example);
 
