@@ -187,7 +187,67 @@
       <include refid="Example_Where_Clause" />
     </if>
   </select>
-  <update id="updateByExampleSelective" parameterType="map">
+  <!--统计总行数-->
+  <select id="count" resultType="java.lang.Long">
+    select count(1)
+    from travel_blog
+    <where>
+      <if test="id != null">
+        and id = #{id}
+      </if>
+      <if test="title != null and title != ''">
+        and title = #{title}
+      </if>
+      <if test="context != null and context != ''">
+        and context = #{context}
+      </if>
+      <if test="time != null">
+        and time = #{time}
+      </if>
+      <if test="status != null">
+        and status = #{status}
+      </if>
+      <if test="authorId != null">
+        and author_id = #{authorId}
+      </if>
+      <if test="location != null">
+        and location = #{location}
+      </if>
+    </where>
+  </select>
+  <!--查询指定行数据-->
+  <select id="queryAllByLimit" resultMap="BaseResultMap">
+    select
+    id, title, context, time, status, author_id, location
+    from travel_blog
+    <where>
+      <if test="id != null">
+        and id = #{id}
+      </if>
+      <if test="title != null and title != ''">
+        and title = #{title}
+      </if>
+      <if test="context != null and context != ''">
+        and context = #{context}
+      </if>
+      <if test="time != null">
+        and time = #{time}
+      </if>
+      <if test="status != null">
+        and status = #{status}
+      </if>
+      <if test="authorId != null">
+        and author_id = #{authorId}
+      </if>
+      <if test="location != null">
+        and location = #{location}
+      </if>
+    </where>
+    limit #{pageable.offset}, #{pageable.pageSize}
+  </select>
+
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
     update travel_blog
     <set>
       <if test="record.id != null">

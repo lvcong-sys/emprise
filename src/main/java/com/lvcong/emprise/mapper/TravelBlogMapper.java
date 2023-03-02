@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.data.domain.PageRequest;
+
 @Mapper
 public interface TravelBlogMapper {
     long countByExample(TravelBlogExample example);
@@ -24,15 +26,7 @@ public interface TravelBlogMapper {
 
     TravelBlog selectByPrimaryKey(Integer id);
 
-    int updateByExampleSelective(@Param("record") TravelBlog record, @Param("example") TravelBlogExample example);
+    List<TravelBlog> queryAllByLimit(TravelBlogExample travelBlog, PageRequest pageRequest);
 
-    int updateByExampleWithBLOBs(@Param("record") TravelBlog record, @Param("example") TravelBlogExample example);
-
-    int updateByExample(@Param("record") TravelBlog record, @Param("example") TravelBlogExample example);
-
-    int updateByPrimaryKeySelective(TravelBlog record);
-
-    int updateByPrimaryKeyWithBLOBs(TravelBlog record);
-
-    int updateByPrimaryKey(TravelBlog record);
+    void updateByExampleSelective(TravelBlog blog, TravelBlogExample travelBlog);
 }

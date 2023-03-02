@@ -7,6 +7,8 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.data.domain.PageRequest;
+
 @Mapper
 public interface TravelScenicMapper {
     long countByExample(TravelScenicExample example);
@@ -30,4 +32,6 @@ public interface TravelScenicMapper {
     int updateByPrimaryKeySelective(TravelScenic record);
 
     int updateByPrimaryKey(TravelScenic record);
+
+    List<TravelScenic> queryAllByLimit(TravelScenicExample travelScenic, PageRequest pageRequest);
 }

@@ -136,6 +136,24 @@
       <include refid="Example_Where_Clause" />
     </if>
   </select>
+  <!--查询指定行数据-->
+  <select id="queryAllByLimit" resultMap="TravelScenicMap">
+    select
+    scenic_id, scenic_url, scenic_details
+    from travel_scenic
+    <where>
+      <if test="scenicId != null">
+        and scenic_id = #{scenicId}
+      </if>
+      <if test="scenicUrl != null and scenicUrl != ''">
+        and scenic_url = #{scenicUrl}
+      </if>
+      <if test="scenicDetails != null">
+        and scenic_details = #{scenicDetails}
+      </if>
+    </where>
+    limit #{pageable.offset}, #{pageable.pageSize}
+  </select>
   <update id="updateByExampleSelective" parameterType="map">
     update travel_scenic
     <set>
