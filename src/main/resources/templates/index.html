@@ -1,20 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Your vacation, tours and travel theme needs are all met at emprise." />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Emprise</title>
-    <link rel="shortcut icon" type="image/png" href="./assets/favicon.ico" />
-    <link rel="preload" href="./vendors/jquery.min.js" as="script" />
-    <link rel="preload" href="./vendors/rs6.css" as="style" />
-    <script src="./vendors/jquery.min.js"></script>
-    <link rel="stylesheet" href="./vendors/rs6.css" />
-    <link rel="stylesheet" href="./styles/plugins.css" />
-    <link rel="stylesheet" href="./styles/main.css" />
-  </head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+  <head th:replace="common::head"><title></title></head>
 
   <body class="rlr-body">
+  <!-- 引用导航栏 -->
+  <div th:replace="common::navigation"></div>
     <main id="rlr-main" class="rlr-main--fixed-top">
       <!-- Hero Banner -->
       <aside>
@@ -1250,9 +1240,10 @@
           </div>
         </div>
       </section>
+      <!-- 引用尾部 -->
+      <div th:replace="common::footer"></div>
     </main>
-    <script src="./vendors/navx/js/navigation.min.js"></script>
-    <script src="./js/main.js"></script>
+    <div th:replace="common::footerJs"></div>
     <!-- REVOLUTION JS FILES -->
     <script>
       window.RS_MODULES = window.RS_MODULES || {};

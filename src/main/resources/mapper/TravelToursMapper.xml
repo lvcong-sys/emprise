@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lvcong.emprise.mapper.TravelToursMapper">
+  <resultMap id="BaseResultMap" type="com.lvcong.emprise.bean.TravelTours">
+    <id column="tours_id" jdbcType="INTEGER" property="toursId" />
+    <result column="tours_price" jdbcType="DECIMAL" property="toursPrice" />
+    <result column="tours_discount" jdbcType="DECIMAL" property="toursDiscount" />
+    <result column="tours_begin" jdbcType="TIMESTAMP" property="toursBegin" />
+    <result column="tours_end" jdbcType="TIMESTAMP" property="toursEnd" />
+    <result column="tours_count" jdbcType="INTEGER" property="toursCount" />
+    <result column="tours_time" jdbcType="INTEGER" property="toursTime" />
+    <result column="tours_other" jdbcType="VARCHAR" property="toursOther" />
+    <result column="tours_detail" jdbcType="VARCHAR" property="toursDetail" />
+    <result column="tours_name" jdbcType="VARCHAR" property="toursName" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    tours_id, tours_price, tours_discount, tours_begin, tours_end, tours_count, tours_time, 
+    tours_other, tours_detail, tours_name
+  </sql>
+  <select id="selectByExample" parameterType="com.lvcong.emprise.bean.TravelToursExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from travel_tours
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from travel_tours
+    where tours_id = #{toursId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from travel_tours
+    where tours_id = #{toursId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.lvcong.emprise.bean.TravelToursExample">
+    delete from travel_tours
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.lvcong.emprise.bean.TravelTours">
+    insert into travel_tours (tours_id, tours_price, tours_discount, 
+      tours_begin, tours_end, tours_count, 
+      tours_time, tours_other, tours_detail, 
+      tours_name)
+    values (#{toursId,jdbcType=INTEGER}, #{toursPrice,jdbcType=DECIMAL}, #{toursDiscount,jdbcType=DECIMAL}, 
+      #{toursBegin,jdbcType=TIMESTAMP}, #{toursEnd,jdbcType=TIMESTAMP}, #{toursCount,jdbcType=INTEGER}, 
+      #{toursTime,jdbcType=INTEGER}, #{toursOther,jdbcType=VARCHAR}, #{toursDetail,jdbcType=VARCHAR}, 
+      #{toursName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lvcong.emprise.bean.TravelTours">
+    insert into travel_tours
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="toursId != null">
+        tours_id,
+      </if>
+      <if test="toursPrice != null">
+        tours_price,
+      </if>
+      <if test="toursDiscount != null">
+        tours_discount,
+      </if>
+      <if test="toursBegin != null">
+        tours_begin,
+      </if>
+      <if test="toursEnd != null">
+        tours_end,
+      </if>
+      <if test="toursCount != null">
+        tours_count,
+      </if>
+      <if test="toursTime != null">
+        tours_time,
+      </if>
+      <if test="toursOther != null">
+        tours_other,
+      </if>
+      <if test="toursDetail != null">
+        tours_detail,
+      </if>
+      <if test="toursName != null">
+        tours_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="toursId != null">
+        #{toursId,jdbcType=INTEGER},
+      </if>
+      <if test="toursPrice != null">
+        #{toursPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="toursDiscount != null">
+        #{toursDiscount,jdbcType=DECIMAL},
+      </if>
+      <if test="toursBegin != null">
+        #{toursBegin,jdbcType=TIMESTAMP},
+      </if>
+      <if test="toursEnd != null">
+        #{toursEnd,jdbcType=TIMESTAMP},
+      </if>
+      <if test="toursCount != null">
+        #{toursCount,jdbcType=INTEGER},
+      </if>
+      <if test="toursTime != null">
+        #{toursTime,jdbcType=INTEGER},
+      </if>
+      <if test="toursOther != null">
+        #{toursOther,jdbcType=VARCHAR},
+      </if>
+      <if test="toursDetail != null">
+        #{toursDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="toursName != null">
+        #{toursName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.lvcong.emprise.bean.TravelToursExample" resultType="java.lang.Long">
+    select count(*) from travel_tours
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update travel_tours
+    <set>
+      <if test="record.toursId != null">
+        tours_id = #{record.toursId,jdbcType=INTEGER},
+      </if>
+      <if test="record.toursPrice != null">
+        tours_price = #{record.toursPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.toursDiscount != null">
+        tours_discount = #{record.toursDiscount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.toursBegin != null">
+        tours_begin = #{record.toursBegin,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.toursEnd != null">
+        tours_end = #{record.toursEnd,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.toursCount != null">
+        tours_count = #{record.toursCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.toursTime != null">
+        tours_time = #{record.toursTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.toursOther != null">
+        tours_other = #{record.toursOther,jdbcType=VARCHAR},
+      </if>
+      <if test="record.toursDetail != null">
+        tours_detail = #{record.toursDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.toursName != null">
+        tours_name = #{record.toursName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update travel_tours
+    set tours_id = #{record.toursId,jdbcType=INTEGER},
+      tours_price = #{record.toursPrice,jdbcType=DECIMAL},
+      tours_discount = #{record.toursDiscount,jdbcType=DECIMAL},
+      tours_begin = #{record.toursBegin,jdbcType=TIMESTAMP},
+      tours_end = #{record.toursEnd,jdbcType=TIMESTAMP},
+      tours_count = #{record.toursCount,jdbcType=INTEGER},
+      tours_time = #{record.toursTime,jdbcType=INTEGER},
+      tours_other = #{record.toursOther,jdbcType=VARCHAR},
+      tours_detail = #{record.toursDetail,jdbcType=VARCHAR},
+      tours_name = #{record.toursName,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lvcong.emprise.bean.TravelTours">
+    update travel_tours
+    <set>
+      <if test="toursPrice != null">
+        tours_price = #{toursPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="toursDiscount != null">
+        tours_discount = #{toursDiscount,jdbcType=DECIMAL},
+      </if>
+      <if test="toursBegin != null">
+        tours_begin = #{toursBegin,jdbcType=TIMESTAMP},
+      </if>
+      <if test="toursEnd != null">
+        tours_end = #{toursEnd,jdbcType=TIMESTAMP},
+      </if>
+      <if test="toursCount != null">
+        tours_count = #{toursCount,jdbcType=INTEGER},
+      </if>
+      <if test="toursTime != null">
+        tours_time = #{toursTime,jdbcType=INTEGER},
+      </if>
+      <if test="toursOther != null">
+        tours_other = #{toursOther,jdbcType=VARCHAR},
+      </if>
+      <if test="toursDetail != null">
+        tours_detail = #{toursDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="toursName != null">
+        tours_name = #{toursName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where tours_id = #{toursId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lvcong.emprise.bean.TravelTours">
+    update travel_tours
+    set tours_price = #{toursPrice,jdbcType=DECIMAL},
+      tours_discount = #{toursDiscount,jdbcType=DECIMAL},
+      tours_begin = #{toursBegin,jdbcType=TIMESTAMP},
+      tours_end = #{toursEnd,jdbcType=TIMESTAMP},
+      tours_count = #{toursCount,jdbcType=INTEGER},
+      tours_time = #{toursTime,jdbcType=INTEGER},
+      tours_other = #{toursOther,jdbcType=VARCHAR},
+      tours_detail = #{toursDetail,jdbcType=VARCHAR},
+      tours_name = #{toursName,jdbcType=VARCHAR}
+    where tours_id = #{toursId,jdbcType=INTEGER}
+  </update>
+</mapper>

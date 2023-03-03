@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+  <head th:replace="common::head">
+    <title></title>
+  </head>
+
+  <body class="rlr-body">
+  <!-- 引用导航栏 -->
+  <div th:replace="common::navigation"></div>
+    <!-- Main Content -->
+    <main id="rlr-main" class="rlr-main--fixed-top">
+      <div class="rlr-section__content--lg-top">
+        <section class="rlr-section rlr-section__mt rlr-account">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 offset-lg-4">
+                <form method="post" class="rlr-authforms" th:action="@{/user/doLogin}">
+                  <div class="rlr-authforms__header" >
+                    <img th:src="@{/assets/images/logos/Logomark.svg}" alt="Logo" />
+                  </div>
+                  <div class="rlr-authforms__form">
+                    <div class="rlr-authforms__inputgroup"><label class="rlr-form-label rlr-form-label--light"> 邮箱 </label> <input type="text" autocomplete="off" class="form-control form-control--light" name="email" required/></div>
+                    <div class="rlr-authforms__inputgroup"><label class="rlr-form-label rlr-form-label--light"> 密码 </label> <input type="password" autocomplete="off" class="form-control form-control--light" name="password" required/></div>
+                    <div class="rlr-authforms__forgotpassword">
+                      <div class="form-check-inline">
+                        <input class="form-check-input rlr-form-check-input" id="rlr-checkbox-1" type="checkbox" value="defaultValue" />
+                        <label class="rlr-form-label rlr-form-label--checkbox rlr-form-label--font-inherit rlr-form-label--bold" for="rlr-checkbox-1">记住密码</label>
+                      </div>
+                      <p th:text="${message}" style="color: red"></p>
+                      <a href="account-pages--forgot-password">忘记密码</a>
+                    </div>
+                    <button type="submit" class="btn mb-3 rlr-button rlr-button--fullwidth rlr-button--primary">登录</button>
+                  </div>
+                  <div class="rlr-authforms__notes">
+                    <p>没有账号? <a href="signup">注册</a></p>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div th:replace="common::footer"></div>
+    </main>
+  <div th:replace="common::footerJs"></div>
+  </body>
+</html>
