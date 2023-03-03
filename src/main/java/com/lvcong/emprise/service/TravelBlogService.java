@@ -1,8 +1,6 @@
 package com.lvcong.emprise.service;
 
-
-import com.lvcong.emprise.bean.TravelBlog;
-import com.lvcong.emprise.bean.TravelBlogExample;
+import com.lvcong.emprise.entity.TravelBlog;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
@@ -10,7 +8,7 @@ import org.springframework.data.domain.PageRequest;
  * (TravelBlog)表服务接口
  *
  * @author makejava
- * @since 2023-03-02 13:30:19
+ * @since 2023-03-02 18:03:53
  */
 public interface TravelBlogService {
 
@@ -23,14 +21,13 @@ public interface TravelBlogService {
     TravelBlog queryById(Integer id);
 
     /**
-     * 分页查询，sql语句待实现
+     * 分页查询
      *
      * @param travelBlog 筛选条件
      * @param pageRequest      分页对象
      * @return 查询结果
      */
-
-    Page<TravelBlog> queryByPage(TravelBlogExample travelBlog, PageRequest pageRequest);
+    Page<TravelBlog> queryByPage(TravelBlog travelBlog, PageRequest pageRequest);
 
     /**
      * 新增数据
@@ -42,12 +39,11 @@ public interface TravelBlogService {
 
     /**
      * 修改数据
-     * @param blog 修改数据前的实例对象
+     *
      * @param travelBlog 实例对象
      * @return 实例对象
-     *
      */
-    TravelBlog update(TravelBlog blog, TravelBlogExample travelBlog);
+    TravelBlog update(TravelBlog travelBlog);
 
     /**
      * 通过主键删除数据

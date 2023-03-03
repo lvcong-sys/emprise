@@ -1,10 +1,12 @@
 package com.lvcong.emprise.service.impl;
 
-import com.lvcong.emprise.bean.SysUser;
-import com.lvcong.emprise.bean.SysUserExample;
-import com.lvcong.emprise.mapper.SysUserMapper;
+import com.lvcong.emprise.entity.SysUser;
+import com.lvcong.emprise.dao.SysUserDao;
 import com.lvcong.emprise.service.SysUserService;
 import org.springframework.stereotype.Service;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
 
 import javax.annotation.Resource;
 
@@ -12,15 +14,15 @@ import javax.annotation.Resource;
  * 系统用户(SysUser)表服务实现类
  *
  * @author makejava
- * @since 2023-03-02 13:32:56
+ * @since 2023-03-02 18:03:51
  */
 @Service
 public class SysUserServiceImpl implements SysUserService {
     @Resource
-    private final SysUserMapper sysUserMapper;
+    private final SysUserDao sysUserDao;
 
-    public SysUserServiceImpl(SysUserMapper sysUserMapper) {
-        this.sysUserMapper = sysUserMapper;
+    public SysUserServiceImpl(SysUserDao sysUserDao) {
+        this.sysUserDao = sysUserDao;
     }
 
     /**
@@ -31,7 +33,20 @@ public class SysUserServiceImpl implements SysUserService {
      */
     @Override
     public SysUser queryById(Long userId) {
-        return this.sysUserMapper.selectByPrimaryKey(userId);
+        return this.sysUserDao.queryById(userId);
+    }
+
+    /**
+     * 分页查询
+     *
+     * @param sysUser 筛选条件
+     * @param pageRequest      分页对象
+     * @return 查询结果
+     */
+    @Override
+    public Page<SysUser> queryByPage(SysUser sysUser, PageRequest pageRequest) {
+        long total = this.sysUserDao.count(sysUser);
+        return new PageImpl<>(this.sysUserDao.queryAllByLimit(sysUser, pageRequest), pageRequest, total);
     }
 
     /**
@@ -42,7 +57,7 @@ public class SysUserServiceImpl implements SysUserService {
      */
     @Override
     public SysUser insert(SysUser sysUser) {
-        this.sysUserMapper.insert(sysUser);
+        this.sysUserDao.insert(sysUser);
         return sysUser;
     }
 
@@ -53,9 +68,9 @@ public class SysUserServiceImpl implements SysUserService {
      * @return 实例对象
      */
     @Override
-    public SysUser update(SysUser user, SysUserExample sysUser) {
-        this.sysUserMapper.updateByExample(user,sysUser);
-        return this.queryById(user.getUserId());
+    public SysUser update(SysUser sysUser) {
+        this.sysUserDao.update(sysUser);
+        return this.queryById(sysUser.getUserId());
     }
 
     /**
@@ -66,6 +81,6 @@ public class SysUserServiceImpl implements SysUserService {
      */
     @Override
     public boolean deleteById(Long userId) {
-        return this.sysUserMapper.deleteByPrimaryKey(userId) > 0;
+        return this.sysUserDao.deleteById(userId) > 0;
     }
 }

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lvcong.emprise.dao.TravelToursDao">
+
+    <resultMap type="com.lvcong.emprise.entity.TravelTours" id="TravelToursMap">
+        <result property="toursId" column="tours_id" jdbcType="INTEGER"/>
+        <result property="toursPrice" column="tours_price" jdbcType="NUMERIC"/>
+        <result property="toursDiscount" column="tours_discount" jdbcType="NUMERIC"/>
+        <result property="toursBegin" column="tours_begin" jdbcType="TIMESTAMP"/>
+        <result property="toursEnd" column="tours_end" jdbcType="TIMESTAMP"/>
+        <result property="toursCount" column="tours_count" jdbcType="INTEGER"/>
+        <result property="toursTime" column="tours_time" jdbcType="INTEGER"/>
+        <result property="toursOther" column="tours_other" jdbcType="VARCHAR"/>
+        <result property="toursDetail" column="tours_detail" jdbcType="VARCHAR"/>
+        <result property="toursName" column="tours_name" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="TravelToursMap">
+        select
+          tours_id, tours_price, tours_discount, tours_begin, tours_end, tours_count, tours_time, tours_other, tours_detail, tours_name
+        from travel_tours
+        where tours_id = #{toursId}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="TravelToursMap">
+        select
+          tours_id, tours_price, tours_discount, tours_begin, tours_end, tours_count, tours_time, tours_other, tours_detail, tours_name
+        from travel_tours
+        <where>
+            <if test="toursId != null">
+                and tours_id = #{toursId}
+            </if>
+            <if test="toursPrice != null">
+                and tours_price = #{toursPrice}
+            </if>
+            <if test="toursDiscount != null">
+                and tours_discount = #{toursDiscount}
+            </if>
+            <if test="toursBegin != null">
+                and tours_begin = #{toursBegin}
+            </if>
+            <if test="toursEnd != null">
+                and tours_end = #{toursEnd}
+            </if>
+            <if test="toursCount != null">
+                and tours_count = #{toursCount}
+            </if>
+            <if test="toursTime != null">
+                and tours_time = #{toursTime}
+            </if>
+            <if test="toursOther != null and toursOther != ''">
+                and tours_other = #{toursOther}
+            </if>
+            <if test="toursDetail != null and toursDetail != ''">
+                and tours_detail = #{toursDetail}
+            </if>
+            <if test="toursName != null and toursName != ''">
+                and tours_name = #{toursName}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from travel_tours
+        <where>
+            <if test="toursId != null">
+                and tours_id = #{toursId}
+            </if>
+            <if test="toursPrice != null">
+                and tours_price = #{toursPrice}
+            </if>
+            <if test="toursDiscount != null">
+                and tours_discount = #{toursDiscount}
+            </if>
+            <if test="toursBegin != null">
+                and tours_begin = #{toursBegin}
+            </if>
+            <if test="toursEnd != null">
+                and tours_end = #{toursEnd}
+            </if>
+            <if test="toursCount != null">
+                and tours_count = #{toursCount}
+            </if>
+            <if test="toursTime != null">
+                and tours_time = #{toursTime}
+            </if>
+            <if test="toursOther != null and toursOther != ''">
+                and tours_other = #{toursOther}
+            </if>
+            <if test="toursDetail != null and toursDetail != ''">
+                and tours_detail = #{toursDetail}
+            </if>
+            <if test="toursName != null and toursName != ''">
+                and tours_name = #{toursName}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="toursId" useGeneratedKeys="true">
+        insert into travel_tours(tours_price, tours_discount, tours_begin, tours_end, tours_count, tours_time, tours_other, tours_detail, tours_name)
+        values (#{toursPrice}, #{toursDiscount}, #{toursBegin}, #{toursEnd}, #{toursCount}, #{toursTime}, #{toursOther}, #{toursDetail}, #{toursName})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="toursId" useGeneratedKeys="true">
+        insert into travel_tours(tours_price, tours_discount, tours_begin, tours_end, tours_count, tours_time, tours_other, tours_detail, tours_name)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.toursPrice}, #{entity.toursDiscount}, #{entity.toursBegin}, #{entity.toursEnd}, #{entity.toursCount}, #{entity.toursTime}, #{entity.toursOther}, #{entity.toursDetail}, #{entity.toursName})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="toursId" useGeneratedKeys="true">
+        insert into travel_tours(tours_price, tours_discount, tours_begin, tours_end, tours_count, tours_time, tours_other, tours_detail, tours_name)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.toursPrice}, #{entity.toursDiscount}, #{entity.toursBegin}, #{entity.toursEnd}, #{entity.toursCount}, #{entity.toursTime}, #{entity.toursOther}, #{entity.toursDetail}, #{entity.toursName})
+        </foreach>
+        on duplicate key update
+        tours_price = values(tours_price),
+        tours_discount = values(tours_discount),
+        tours_begin = values(tours_begin),
+        tours_end = values(tours_end),
+        tours_count = values(tours_count),
+        tours_time = values(tours_time),
+        tours_other = values(tours_other),
+        tours_detail = values(tours_detail),
+        tours_name = values(tours_name)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update travel_tours
+        <set>
+            <if test="toursPrice != null">
+                tours_price = #{toursPrice},
+            </if>
+            <if test="toursDiscount != null">
+                tours_discount = #{toursDiscount},
+            </if>
+            <if test="toursBegin != null">
+                tours_begin = #{toursBegin},
+            </if>
+            <if test="toursEnd != null">
+                tours_end = #{toursEnd},
+            </if>
+            <if test="toursCount != null">
+                tours_count = #{toursCount},
+            </if>
+            <if test="toursTime != null">
+                tours_time = #{toursTime},
+            </if>
+            <if test="toursOther != null and toursOther != ''">
+                tours_other = #{toursOther},
+            </if>
+            <if test="toursDetail != null and toursDetail != ''">
+                tours_detail = #{toursDetail},
+            </if>
+            <if test="toursName != null and toursName != ''">
+                tours_name = #{toursName},
+            </if>
+        </set>
+        where tours_id = #{toursId}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from travel_tours where tours_id = #{toursId}
+    </delete>
+
+</mapper>
+

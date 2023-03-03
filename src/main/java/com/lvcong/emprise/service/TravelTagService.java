@@ -1,7 +1,7 @@
 package com.lvcong.emprise.service;
 
 
-import com.lvcong.emprise.bean.TravelTag;
+import com.lvcong.emprise.entity.TravelTag;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
@@ -9,7 +9,7 @@ import org.springframework.data.domain.PageRequest;
  * (TravelTag)表服务接口
  *
  * @author makejava
- * @since 2023-03-02 13:30:19
+ * @since 2023-03-02 18:04:23
  */
 public interface TravelTagService {
 

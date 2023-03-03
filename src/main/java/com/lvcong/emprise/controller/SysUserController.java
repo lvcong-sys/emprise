@@ -1,8 +1,9 @@
 package com.lvcong.emprise.controller;
 
-import com.lvcong.emprise.bean.SysUser;
-import com.lvcong.emprise.bean.SysUserExample;
+import com.lvcong.emprise.entity.SysUser;
 import com.lvcong.emprise.service.SysUserService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +13,7 @@ import javax.annotation.Resource;
  * 系统用户(SysUser)表控制层
  *
  * @author makejava
- * @since 2023-03-02 13:32:53
+ * @since 2023-03-02 18:03:49
  */
 @RestController
 @RequestMapping("sysUser")
@@ -25,6 +26,18 @@ public class SysUserController {
 
     public SysUserController(SysUserService sysUserService) {
         this.sysUserService = sysUserService;
+    }
+
+    /**
+     * 分页查询
+     *
+     * @param sysUser 筛选条件
+     * @param pageRequest      分页对象
+     * @return 查询结果
+     */
+    @GetMapping
+    public ResponseEntity<Page<SysUser>> queryByPage(SysUser sysUser, PageRequest pageRequest) {
+        return ResponseEntity.ok(this.sysUserService.queryByPage(sysUser, pageRequest));
     }
 
     /**
@@ -56,8 +69,8 @@ public class SysUserController {
      * @return 编辑结果
      */
     @PutMapping
-    public ResponseEntity<SysUser> edit(SysUser sysUser, SysUserExample sysUserExample) {
-        return ResponseEntity.ok(this.sysUserService.update(sysUser,sysUserExample));
+    public ResponseEntity<SysUser> edit(SysUser sysUser) {
+        return ResponseEntity.ok(this.sysUserService.update(sysUser));
     }
 
     /**

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace=".dao.TravelNoticeDao">
+
+    <resultMap type="com.lvcong.emprise.entity.TravelNotice" id="TravelNoticeMap">
+        <result property="noticeId" column="notice_id" jdbcType="INTEGER"/>
+        <result property="noticeImageurl" column="notice_imageurl" jdbcType="VARCHAR"/>
+        <result property="noticeContent" column="notice_content" jdbcType="VARCHAR"/>
+        <result property="noticeTime" column="notice_time" jdbcType="TIMESTAMP"/>
+        <result property="noticePlace" column="notice_place" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="TravelNoticeMap">
+        select
+          notice_id, notice_imageurl, notice_content, notice_time, notice_place
+        from travel_notice
+        where notice_id = #{noticeId}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="TravelNoticeMap">
+        select
+          notice_id, notice_imageurl, notice_content, notice_time, notice_place
+        from travel_notice
+        <where>
+            <if test="noticeId != null">
+                and notice_id = #{noticeId}
+            </if>
+            <if test="noticeImageurl != null and noticeImageurl != ''">
+                and notice_imageurl = #{noticeImageurl}
+            </if>
+            <if test="noticeContent != null and noticeContent != ''">
+                and notice_content = #{noticeContent}
+            </if>
+            <if test="noticeTime != null">
+                and notice_time = #{noticeTime}
+            </if>
+            <if test="noticePlace != null and noticePlace != ''">
+                and notice_place = #{noticePlace}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from travel_notice
+        <where>
+            <if test="noticeId != null">
+                and notice_id = #{noticeId}
+            </if>
+            <if test="noticeImageurl != null and noticeImageurl != ''">
+                and notice_imageurl = #{noticeImageurl}
+            </if>
+            <if test="noticeContent != null and noticeContent != ''">
+                and notice_content = #{noticeContent}
+            </if>
+            <if test="noticeTime != null">
+                and notice_time = #{noticeTime}
+            </if>
+            <if test="noticePlace != null and noticePlace != ''">
+                and notice_place = #{noticePlace}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="noticeId" useGeneratedKeys="true">
+        insert into travel_notice(notice_imageurl, notice_content, notice_time, notice_place)
+        values (#{noticeImageurl}, #{noticeContent}, #{noticeTime}, #{noticePlace})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="noticeId" useGeneratedKeys="true">
+        insert into travel_notice(notice_imageurl, notice_content, notice_time, notice_place)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.noticeImageurl}, #{entity.noticeContent}, #{entity.noticeTime}, #{entity.noticePlace})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="noticeId" useGeneratedKeys="true">
+        insert into travel_notice(notice_imageurl, notice_content, notice_time, notice_place)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.noticeImageurl}, #{entity.noticeContent}, #{entity.noticeTime}, #{entity.noticePlace})
+        </foreach>
+        on duplicate key update
+        notice_imageurl = values(notice_imageurl),
+        notice_content = values(notice_content),
+        notice_time = values(notice_time),
+        notice_place = values(notice_place)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update travel_notice
+        <set>
+            <if test="noticeImageurl != null and noticeImageurl != ''">
+                notice_imageurl = #{noticeImageurl},
+            </if>
+            <if test="noticeContent != null and noticeContent != ''">
+                notice_content = #{noticeContent},
+            </if>
+            <if test="noticeTime != null">
+                notice_time = #{noticeTime},
+            </if>
+            <if test="noticePlace != null and noticePlace != ''">
+                notice_place = #{noticePlace},
+            </if>
+        </set>
+        where notice_id = #{noticeId}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from travel_notice where notice_id = #{noticeId}
+    </delete>
+
+</mapper>
+

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace=".dao.TravelScenicDao">
+
+    <resultMap type="com.lvcong.emprise.entity.TravelScenic" id="TravelScenicMap">
+        <result property="scenicId" column="scenic_id" jdbcType="INTEGER"/>
+        <result property="scenicUrl" column="scenic_url" jdbcType="VARCHAR"/>
+        <result property="scenicDetails" column="scenic_details" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="TravelScenicMap">
+        select
+          scenic_id, scenic_url, scenic_details
+        from travel_scenic
+        where scenic_id = #{scenicId}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="TravelScenicMap">
+        select
+          scenic_id, scenic_url, scenic_details
+        from travel_scenic
+        <where>
+            <if test="scenicId != null">
+                and scenic_id = #{scenicId}
+            </if>
+            <if test="scenicUrl != null and scenicUrl != ''">
+                and scenic_url = #{scenicUrl}
+            </if>
+            <if test="scenicDetails != null">
+                and scenic_details = #{scenicDetails}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from travel_scenic
+        <where>
+            <if test="scenicId != null">
+                and scenic_id = #{scenicId}
+            </if>
+            <if test="scenicUrl != null and scenicUrl != ''">
+                and scenic_url = #{scenicUrl}
+            </if>
+            <if test="scenicDetails != null">
+                and scenic_details = #{scenicDetails}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="scenicId" useGeneratedKeys="true">
+        insert into travel_scenic(scenic_url)
+        values (#{scenicUrl})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="scenicId" useGeneratedKeys="true">
+        insert into travel_scenic(scenic_url)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.scenicUrl})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="scenicId" useGeneratedKeys="true">
+        insert into travel_scenic(scenic_url)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.scenicUrl})
+        </foreach>
+        on duplicate key update
+        scenic_url = values(scenic_url)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update travel_scenic
+        <set>
+            <if test="scenicUrl != null and scenicUrl != ''">
+                scenic_url = #{scenicUrl},
+            </if>
+        </set>
+        where scenic_id = #{scenicId}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from travel_scenic where scenic_id = #{scenicId}
+    </delete>
+
+</mapper>
+

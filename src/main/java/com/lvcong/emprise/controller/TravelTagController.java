@@ -1,7 +1,7 @@
 package com.lvcong.emprise.controller;
 
 
-import com.lvcong.emprise.bean.TravelTag;
+import com.lvcong.emprise.entity.TravelTag;
 import com.lvcong.emprise.service.TravelTagService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -14,7 +14,7 @@ import javax.annotation.Resource;
  * (TravelTag)表控制层
  *
  * @author makejava
- * @since 2023-03-02 13:30:19
+ * @since 2023-03-02 18:04:22
  */
 @RestController
 @RequestMapping("travelTag")

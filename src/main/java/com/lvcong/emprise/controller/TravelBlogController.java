@@ -1,8 +1,7 @@
 package com.lvcong.emprise.controller;
 
 
-import com.lvcong.emprise.bean.TravelBlog;
-import com.lvcong.emprise.bean.TravelBlogExample;
+import com.lvcong.emprise.entity.TravelBlog;
 import com.lvcong.emprise.service.TravelBlogService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -15,7 +14,7 @@ import javax.annotation.Resource;
  * (TravelBlog)表控制层
  *
  * @author makejava
- * @since 2023-03-02 13:30:19
+ * @since 2023-03-02 18:03:51
  */
 @RestController
 @RequestMapping("travelBlog")
@@ -34,7 +33,7 @@ public class TravelBlogController {
      * @return 查询结果
      */
     @GetMapping
-    public ResponseEntity<Page<TravelBlog>> queryByPage(TravelBlogExample travelBlog, PageRequest pageRequest) {
+    public ResponseEntity<Page<TravelBlog>> queryByPage(TravelBlog travelBlog, PageRequest pageRequest) {
         return ResponseEntity.ok(this.travelBlogService.queryByPage(travelBlog, pageRequest));
     }
 
@@ -67,8 +66,8 @@ public class TravelBlogController {
      * @return 编辑结果
      */
     @PutMapping
-    public ResponseEntity<TravelBlog> edit(TravelBlog travelBlog,TravelBlogExample travelBlogExample) {
-        return ResponseEntity.ok(this.travelBlogService.update(travelBlog,travelBlogExample));
+    public ResponseEntity<TravelBlog> edit(TravelBlog travelBlog) {
+        return ResponseEntity.ok(this.travelBlogService.update(travelBlog));
     }
 
     /**
