@@ -1,31 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Your vacation, tours and travel theme needs are all met at emprise." />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tour Travel Website Template | Emprise</title>
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/png" href="./assets/favicon.ico" />
-    <!-- Plugins CSS -->
-    <link rel="stylesheet" href="./styles/plugins.css" />
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="./styles/main.css" />
-  </head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sa="http://www.w3.org/1999/xhtml">
+<head th:replace="common::head"><title></title></head>
 
-  <body class="rlr-body">
-    <!-- Main Content -->
+<body class="rlr-body">
+<div th:replace="common::navigation"></div>
     <main id="rlr-main" class="rlr-main--fixed-top">
       <div class="rlr-search-results-page container">
         <div class="rlr-search-results-page__breadcrumb-section">
-          <!-- Breadcrumb -->
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb rlr-breadcrumb__items">
-              <li class="breadcrumb-item rlr-breadcrumb__item"><a href="/">Home</a></li>
-              <li class="breadcrumb-item rlr-breadcrumb__item"><a href="/">Destination</a></li>
-              <li class="breadcrumb-item rlr-breadcrumb__item active" aria-current="page">Tour</li>
-            </ol>
-          </nav>
           <div class="rlr-icon-text"><i class="rlr-icon-font flaticon-phone-receiver-silhouette"> </i> <span class="rlr-search-results-page__phone">Questions? +977 (985) 110-8896 </span></div>
         </div>
         <aside class="row">
@@ -269,7 +250,7 @@
                       </button>
                       <span class="rlr-product-detail-header__helptext rlr-js-helptext"></span>
                     </div>
-                    <a href="./product-detail-page.html">
+                    <a href="destination-detail.html">
                       <div class="swiper rlr-js-product-multi-image-swiper">
                         <div class="swiper-wrapper">
                           <div class="swiper-slide">
@@ -295,15 +276,15 @@
                     <!-- Product card header -->
                     <header class="rlr-product-card__header">
                       <div>
-                        <a href="./product-detail-page.html" class="rlr-product-card__anchor-title">
+                        <a href="destination-detail.html" class="rlr-product-card__anchor-title">
                           <h2 class="rlr-product-card__title" itemprop="name">Full-Day Catamaran Cruise to Hvar &amp; Pakleni Islands</h2>
                         </a>
                         <div>
-                          <a href="./product-detail-page.html" class="rlr-product-card__anchor-cat">
+                          <a href="destination-detail.html" class="rlr-product-card__anchor-cat">
                             <span class="rlr-product-card__sub-title">Beach Tours</span>
                           </a>
                           <span class="rlr-product-card__sub-title">|</span>
-                          <a href="./product-detail-page.html" class="rlr-product-card__anchor-sub-cat">
+                          <a href="destination-detail.html" class="rlr-product-card__anchor-sub-cat">
                             <span class="rlr-product-card__sub-title">Dubronik</span>
                           </a>
                         </div>
@@ -345,7 +326,7 @@
                       </button>
                       <span class="rlr-product-detail-header__helptext rlr-js-helptext"></span>
                     </div>
-                    <a href="./product-detail-page.html">
+                    <a href="destination-detail.html">
                       <div class="swiper rlr-js-product-multi-image-swiper">
                         <div class="swiper-wrapper">
                           <div class="swiper-slide">
@@ -371,15 +352,15 @@
                     <!-- Product card header -->
                     <header class="rlr-product-card__header">
                       <div>
-                        <a href="./product-detail-page.html" class="rlr-product-card__anchor-title">
+                        <a href="destination-detail.html" class="rlr-product-card__anchor-title">
                           <h2 class="rlr-product-card__title" itemprop="name">Full-Day Catamaran Cruise to Hvar &amp; Pakleni Islands</h2>
                         </a>
                         <div>
-                          <a href="./product-detail-page.html" class="rlr-product-card__anchor-cat">
+                          <a href="destination-detail.html" class="rlr-product-card__anchor-cat">
                             <span class="rlr-product-card__sub-title">Beach Tours</span>
                           </a>
                           <span class="rlr-product-card__sub-title">|</span>
-                          <a href="./product-detail-page.html" class="rlr-product-card__anchor-sub-cat">
+                          <a href="destination-detail.html" class="rlr-product-card__anchor-sub-cat">
                             <span class="rlr-product-card__sub-title">Dubronik</span>
                           </a>
                         </div>
@@ -421,15 +402,15 @@
                     <!-- Product card header -->
                     <header class="rlr-product-card__header">
                       <div>
-                        <a href="./product-detail-page.html" class="rlr-product-card__anchor-title">
+                        <a href="destination-detail.html" class="rlr-product-card__anchor-title">
                           <h2 class="rlr-product-card__title" itemprop="name">Hot air baloon right with view</h2>
                         </a>
                         <div>
-                          <a href="./product-detail-page.html" class="rlr-product-card__anchor-cat">
+                          <a href="destination-detail.html" class="rlr-product-card__anchor-cat">
                             <span class="rlr-product-card__sub-title">Hiking Tour</span>
                           </a>
                           <span class="rlr-product-card__sub-title">|</span>
-                          <a href="./product-detail-page.html" class="rlr-product-card__anchor-sub-cat">
+                          <a href="destination-detail.html" class="rlr-product-card__anchor-sub-cat">
                             <span class="rlr-product-card__sub-title">Stoke on Trent</span>
                           </a>
                         </div>
@@ -464,7 +445,7 @@
                     </div>
                   </div>
                   <!-- Product card link -->
-                  <a href="./product-detail-page.html" class="rlr-product-card__anchor"></a>
+                  <a href="destination-detail.html" class="rlr-product-card__anchor"></a>
                 </article>
               </div>
               <div class="col-md-6 col-lg-4">
@@ -479,15 +460,15 @@
                     <!-- Product card header -->
                     <header class="rlr-product-card__header">
                       <div>
-                        <a href="./product-detail-page.html" class="rlr-product-card__anchor-title">
+                        <a href="destination-detail.html" class="rlr-product-card__anchor-title">
                           <h2 class="rlr-product-card__title" itemprop="name">White water rafting in Trishuli</h2>
                         </a>
                         <div>
-                          <a href="./product-detail-page.html" class="rlr-product-card__anchor-cat">
+                          <a href="destination-detail.html" class="rlr-product-card__anchor-cat">
                             <span class="rlr-product-card__sub-title">Hiking Tour</span>
                           </a>
                           <span class="rlr-product-card__sub-title">|</span>
-                          <a href="./product-detail-page.html" class="rlr-product-card__anchor-sub-cat">
+                          <a href="destination-detail.html" class="rlr-product-card__anchor-sub-cat">
                             <span class="rlr-product-card__sub-title">Stoke on Trent</span>
                           </a>
                         </div>
@@ -522,7 +503,7 @@
                     </div>
                   </div>
                   <!-- Product card link -->
-                  <a href="./product-detail-page.html" class="rlr-product-card__anchor"></a>
+                  <a href="destination-detail.html" class="rlr-product-card__anchor"></a>
                 </article>
               </div>
               <div class="col-md-6 col-lg-4">
@@ -537,15 +518,15 @@
                     <!-- Product card header -->
                     <header class="rlr-product-card__header">
                       <div>
-                        <a href="./product-detail-page.html" class="rlr-product-card__anchor-title">
+                        <a href="destination-detail.html" class="rlr-product-card__anchor-title">
                           <h2 class="rlr-product-card__title" itemprop="name">Jungle safari trip with family</h2>
                         </a>
                         <div>
-                          <a href="./product-detail-page.html" class="rlr-product-card__anchor-cat">
+                          <a href="destination-detail.html" class="rlr-product-card__anchor-cat">
                             <span class="rlr-product-card__sub-title">Hiking Tour</span>
                           </a>
                           <span class="rlr-product-card__sub-title">|</span>
-                          <a href="./product-detail-page.html" class="rlr-product-card__anchor-sub-cat">
+                          <a href="destination-detail.html" class="rlr-product-card__anchor-sub-cat">
                             <span class="rlr-product-card__sub-title">Stoke on Trent</span>
                           </a>
                         </div>
@@ -580,7 +561,7 @@
                     </div>
                   </div>
                   <!-- Product card link -->
-                  <a href="./product-detail-page.html" class="rlr-product-card__anchor"></a>
+                  <a href="destination-detail.html" class="rlr-product-card__anchor"></a>
                 </article>
               </div>
               <div class="col-md-6 col-lg-4">
@@ -595,15 +576,15 @@
                     <!-- Product card header -->
                     <header class="rlr-product-card__header">
                       <div>
-                        <a href="./product-detail-page.html" class="rlr-product-card__anchor-title">
+                        <a href="destination-detail.html" class="rlr-product-card__anchor-title">
                           <h2 class="rlr-product-card__title" itemprop="name">Cycling tour around Europe</h2>
                         </a>
                         <div>
-                          <a href="./product-detail-page.html" class="rlr-product-card__anchor-cat">
+                          <a href="destination-detail.html" class="rlr-product-card__anchor-cat">
                             <span class="rlr-product-card__sub-title">Hiking Tour</span>
                           </a>
                           <span class="rlr-product-card__sub-title">|</span>
-                          <a href="./product-detail-page.html" class="rlr-product-card__anchor-sub-cat">
+                          <a href="destination-detail.html" class="rlr-product-card__anchor-sub-cat">
                             <span class="rlr-product-card__sub-title">Stoke on Trent</span>
                           </a>
                         </div>
@@ -638,7 +619,7 @@
                     </div>
                   </div>
                   <!-- Product card link -->
-                  <a href="./product-detail-page.html" class="rlr-product-card__anchor"></a>
+                  <a href="destination-detail.html" class="rlr-product-card__anchor"></a>
                 </article>
               </div>
               <div class="col-md-6 col-lg-4">
@@ -653,15 +634,15 @@
                     <!-- Product card header -->
                     <header class="rlr-product-card__header">
                       <div>
-                        <a href="./product-detail-page.html" class="rlr-product-card__anchor-title">
+                        <a href="destination-detail.html" class="rlr-product-card__anchor-title">
                           <h2 class="rlr-product-card__title" itemprop="name">Off road driving around Dubai</h2>
                         </a>
                         <div>
-                          <a href="./product-detail-page.html" class="rlr-product-card__anchor-cat">
+                          <a href="destination-detail.html" class="rlr-product-card__anchor-cat">
                             <span class="rlr-product-card__sub-title">Hiking Tour</span>
                           </a>
                           <span class="rlr-product-card__sub-title">|</span>
-                          <a href="./product-detail-page.html" class="rlr-product-card__anchor-sub-cat">
+                          <a href="destination-detail.html" class="rlr-product-card__anchor-sub-cat">
                             <span class="rlr-product-card__sub-title">Stoke on Trent</span>
                           </a>
                         </div>
@@ -696,7 +677,7 @@
                     </div>
                   </div>
                   <!-- Product card link -->
-                  <a href="./product-detail-page.html" class="rlr-product-card__anchor"></a>
+                  <a href="destination-detail.html" class="rlr-product-card__anchor"></a>
                 </article>
               </div>
               <div class="col-md-6 col-lg-4">
@@ -711,15 +692,15 @@
                     <!-- Product card header -->
                     <header class="rlr-product-card__header">
                       <div>
-                        <a href="./product-detail-page.html" class="rlr-product-card__anchor-title">
+                        <a href="destination-detail.html" class="rlr-product-card__anchor-title">
                           <h2 class="rlr-product-card__title" itemprop="name">Motor sports activity in India</h2>
                         </a>
                         <div>
-                          <a href="./product-detail-page.html" class="rlr-product-card__anchor-cat">
+                          <a href="destination-detail.html" class="rlr-product-card__anchor-cat">
                             <span class="rlr-product-card__sub-title">Hiking Tour</span>
                           </a>
                           <span class="rlr-product-card__sub-title">|</span>
-                          <a href="./product-detail-page.html" class="rlr-product-card__anchor-sub-cat">
+                          <a href="destination-detail.html" class="rlr-product-card__anchor-sub-cat">
                             <span class="rlr-product-card__sub-title">Stoke on Trent</span>
                           </a>
                         </div>
@@ -754,7 +735,7 @@
                     </div>
                   </div>
                   <!-- Product card link -->
-                  <a href="./product-detail-page.html" class="rlr-product-card__anchor"></a>
+                  <a href="destination-detail.html" class="rlr-product-card__anchor"></a>
                 </article>
               </div>
               <div class="col-md-6 col-lg-4">
@@ -769,15 +750,15 @@
                     <!-- Product card header -->
                     <header class="rlr-product-card__header">
                       <div>
-                        <a href="./product-detail-page.html" class="rlr-product-card__anchor-title">
+                        <a href="destination-detail.html" class="rlr-product-card__anchor-title">
                           <h2 class="rlr-product-card__title" itemprop="name">Paragliding in amazing Kenya</h2>
                         </a>
                         <div>
-                          <a href="./product-detail-page.html" class="rlr-product-card__anchor-cat">
+                          <a href="destination-detail.html" class="rlr-product-card__anchor-cat">
                             <span class="rlr-product-card__sub-title">Hiking Tour</span>
                           </a>
                           <span class="rlr-product-card__sub-title">|</span>
-                          <a href="./product-detail-page.html" class="rlr-product-card__anchor-sub-cat">
+                          <a href="destination-detail.html" class="rlr-product-card__anchor-sub-cat">
                             <span class="rlr-product-card__sub-title">Stoke on Trent</span>
                           </a>
                         </div>
@@ -812,7 +793,7 @@
                     </div>
                   </div>
                   <!-- Product card link -->
-                  <a href="./product-detail-page.html" class="rlr-product-card__anchor"></a>
+                  <a href="destination-detail.html" class="rlr-product-card__anchor"></a>
                 </article>
               </div>
             </div>
@@ -851,9 +832,8 @@
           </div>
         </div>
       </div>
-    </main> 
-    <!-- Scripts -->
-    <script src="./vendors/navx/js/navigation.min.js" defer></script>
-    <script src="./js/main.js" defer></script>
+      <div th:replace="common::footer"></div>
+    </main>
+<div th:replace="common::footerJs"></div>
   </body>
 </html>

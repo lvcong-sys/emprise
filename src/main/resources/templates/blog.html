@@ -1,97 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Your vacation, tours and travel theme needs are all met at emprise." />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tour Travel Website Template | Emprise</title>
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/png" href="./assets/favicon.ico" />
-    <!-- Plugins CSS -->
-    <link rel="stylesheet" href="./styles/plugins.css" />
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="./styles/main.css" />
-  </head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sa="http://www.w3.org/1999/xhtml">
+<head th:replace="common::head"><title></title></head>
 
-  <body class="rlr-body">
-    <!-- Main Content -->
+<body class="rlr-body">
+<!-- 引用导航栏 -->
+<div th:replace="common::navigation"></div>
     <main id="rlr-main" class="rlr-main--fixed-top">
-      <!-- Blog Element -->
-      <div class="container-xxl">
-        <article class="rlr-article rlr-article-single--v2">
-          <header class="rlr-article__header">
-            <div class="rlr-article__header__timestamp">Published 09 April Jan 2022</div>
-            <h1 class="type-h1">A weekend in Nagarkot</h1>
-            <h6 class="type-sub-title">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat.</h6>
-          </header>
-          <div class="rlr-article__featured-photo">
-            <img src="./assets/images/blog-image--main.jpg" alt="Featured Photo" />
-          </div>
-          <div class="rlr-article__wrapper">
-            <div class="content">
-              <div class="content__highlight">
-                <h2 class="type-h3">About Nagarkot</h2>
-                <p class="type-lead">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper mattis lorem non. Ultrices praesent amet ipsum justo massa. Eu dolor aliquet risus gravida nunc at feugiat consequat purus. Non massa enim vitae duis mattis. Vel in ultricies vel
-                  fringilla.
-                </p>
+      <div class="container">
+        <div class="row rlr-search-results-page__product-details justify-content-center">
+          <section class="rlr-search-results-page__product-list">
+            <div class="row rlr-listings__header">
+              <h1 class="rlr-section__heading--main">游记</h1>
+            </div>
+            <div class="row rlr-search-results-page__card-wrapper">
+              <div class="col-md-6 col-lg-6">
+                <article class="rlr-postcard">
+                  <img class="rlr-postcard__thumbnail" src="./assets/images/blog/blog-listing01.jpg" alt="blog image" />
+                  <div class="rlr-postcard__summary">
+                    <span class="rlr-postcard__author">Sanjeev Jha | 19 Jan 2022</span>
+                    <a href="./single.html" class="rlr-product-card__anchor-title">
+                      <h2 class="rlr-product-card__title">MT. Everest trekking theme</h2>
+                    </a>
+                    <p>Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?</p>
+                    <div class="rlr-product-card__footer">
+                      <a href="#" class="rlr-icon-text rlr-icon-text--anchor rlr-icon-text__anchor rlr-product-card__icon-text"> <i class="rlr-icon-font flaticon-comment-left"> </i> <span class="rlr-postcard__replies">5 Replies </span> </a>
+                      <div class="rlr-product-card__icon-text-list">
+                        <a href="#" class="rlr-icon-text rlr-icon-text--anchor rlr-icon-text__anchor rlr-product-card__icon-text"> <i class="rlr-icon-font flaticon-check"> </i> <span class="rlr-postcard__tag">Travel </span> </a>
+                        <a href="#" class="rlr-icon-text rlr-icon-text--anchor rlr-icon-text__anchor rlr-product-card__icon-text"> <i class="rlr-icon-font flaticon-check"> </i> <span class="rlr-postcard__tag">Mountain </span> </a>
+                        <a href="#" class="rlr-icon-text rlr-icon-text--anchor rlr-icon-text__anchor rlr-product-card__icon-text"> <i class="rlr-icon-font flaticon-check"> </i> <span class="rlr-postcard__tag">Road Trip </span> </a>
+                      </div>
+                    </div>
+                  </div>
+                </article>
               </div>
-              <figure>
-                <img src="./assets/images/blog-single-02.jpg" alt="Photo" />
-              </figure>
-              <p class="type-lead">Nunc commodo eros velit, vitae tempor purus laoreet in. Fusce a condimentum magna, sit amet ultricies nibh. Vivamus tristique enim non accumsan ornare. Cras tincidunt ultrices libero nec bibendum.</p>
-              <p class="type-lead">
-                Cras dignissim eros ullamcorper sapien porttitor, eget laoreet ipsum dapibus. Nulla tincidunt pulvinar ante, in sollicitudin massa iaculis quis. Praesent ac venenatis mi. Vivamus risus dui, convallis nec risus a, luctus gravida ipsum. Donec erat libero, euismod
-                nec quam nec, congue maximus urna. Fusce pharetra urna ut pharetra iaculis. In vitae venenatis sem, nec lacinia nibh. Pellentesque ac consectetur lectus.
-              </p>
-              <p class="type-lead">Mauris vitae bibendum enim. Curabitur luctus ligula purus, sit amet venenatis orcijar Vivamus tristique enim non accumsan ornare. Cras tincidunt ultrices libero nec bibendum.</p>
-              <blockquote>
-                <h5 class="type-h6-medium">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</h5>
-                <p class="type-body content-quote__author">— Sanjeev Jha, Railar Solutions</p>
-              </blockquote>
-              <h5 class="type-h6-medium">Things to note</h5>
-              <p class="type-lead">Nunc commodo eros velit, vitae tempor purus laoreet in. Fusce a condimentum magna, sit amet ultricies nibh. Vivamus tristique enim non accumsan ornare. Cras tincidunt ultrices libero nec bibendum.</p>
-              <div class="rlr-article__badges">
-                <span class="rlr-badge rlr-badge--left rlr-badge-- rlr-badge rlr-badge--left"> Nomad </span> <span class="rlr-badge rlr-badge--left rlr-badge-- rlr-badge rlr-badge--left"> Wanderer </span>
-                <span class="rlr-badge rlr-badge--left rlr-badge-- rlr-badge rlr-badge--left"> Off the Beat </span>
+              <div class="col-md-6 col-lg-6">
+                <article class="rlr-postcard">
+                  <img class="rlr-postcard__thumbnail" src="./assets/images/blog/blog-listing02.jpg" alt="blog image" />
+                  <div class="rlr-postcard__summary">
+                    <span class="rlr-postcard__author">Sanjeev Jha | 19 Jan 2022</span>
+                    <a href="./single.html" class="rlr-product-card__anchor-title">
+                      <h2 class="rlr-product-card__title">Annapurna himal blog posts</h2>
+                    </a>
+                    <p>Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?</p>
+                    <div class="rlr-product-card__footer">
+                      <a href="#" class="rlr-icon-text rlr-icon-text--anchor rlr-icon-text__anchor rlr-product-card__icon-text"> <i class="rlr-icon-font flaticon-comment-left"> </i> <span class="rlr-postcard__replies">5 Replies </span> </a>
+                      <div class="rlr-product-card__icon-text-list">
+                        <a href="#" class="rlr-icon-text rlr-icon-text--anchor rlr-icon-text__anchor rlr-product-card__icon-text"> <i class="rlr-icon-font flaticon-check"> </i> <span class="rlr-postcard__tag">Travel </span> </a>
+                        <a href="#" class="rlr-icon-text rlr-icon-text--anchor rlr-icon-text__anchor rlr-product-card__icon-text"> <i class="rlr-icon-font flaticon-check"> </i> <span class="rlr-postcard__tag">Mountain </span> </a>
+                        <a href="#" class="rlr-icon-text rlr-icon-text--anchor rlr-icon-text__anchor rlr-product-card__icon-text"> <i class="rlr-icon-font flaticon-check"> </i> <span class="rlr-postcard__tag">Road Trip </span> </a>
+                      </div>
+                    </div>
+                  </div>
+                </article>
               </div>
             </div>
-          </div>
-        </article>
-        <!-- Newsletter Subscription -->
-        <section class="rlr-section rlr-section__mt row align-items-center">
-          <div class="col-lg-6">
-            <div class="rlr-gallery--newsletter">
-              <div class="rlr-gallery--newsletter__thumbs">
-                <div class="rlr-gallery--newsletter__thumbs__col-1">
-                  <img src="./assets/images/rlr-newsletter-01.jpg" alt="gallery image" />
-                </div>
-                <div class="rlr-gallery--newsletter__thumbs__col-2">
-                  <img src="./assets/images/rlr-newsletter-02.jpg" alt="gallery image" />
-                  <img src="./assets/images/rlr-newsletter-03.jpg" alt="gallery image" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="rlr-newsletter">
-              <div class="rlr-newsletter__content" data-aos="fade-down" data-aos-offset="250" data-aos-duration="700">
-                <div class="rlr-newsletter__subtitle">Subscribe For Offers</div>
-                <h2 class="rlr-newsletter__title">Adventures Calling You Guys!</h2>
-                <p>The Brilliant reasons Emprise should be your one-stop-shop!</p>
-                <form class="rlr-subscribe" data-aos="fade-up" data-aos-offset="250" data-aos-duration="700">
-                  <input type="email" class="rlr-subscribe__input" placeholder="Enter your email" />
-                  <button class="btn">Send Now!</button>
-                </form>
-                <p class="rlr-newsletter__ps">Expect a reply in 2-3 working days</p>
-              </div>
-            </div>
-          </div>
-        </section>
+            <hr class="rlr-search-results-page__divider" />
+            <nav class="rlr-pagination" aria-label="Product list navigation">
+              <ul class="pagination rlr-pagination__list">
+                <li class="page-item rlr-pagination__page-item disabled">
+                  <a class="page-link rlr-pagination__page-link rlr-pagination__page-link--prev" href="#" aria-label="Previous">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M15.833 10H4.167m0 0L10 15.833M4.167 10 10 4.167" stroke="var(--body-color)" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span aria-hidden="true">Previous</span>
+                  </a>
+                </li>
+                <li class="page-item rlr-pagination__page-item">
+                  <ul class="pagination rlr-pagination__child-list">
+                    <li class="page-item rlr-pagination__page-item"><a class="page-link rlr-pagination__page-link rlr-pagination__page-link--counter" href="#">1</a></li>
+                    <li class="page-item rlr-pagination__page-item"><a class="page-link rlr-pagination__page-link rlr-pagination__page-link--counter" href="#">2</a></li>
+                    <li class="page-item rlr-pagination__page-item"><a class="page-link rlr-pagination__page-link rlr-pagination__page-link--counter" href="#">3</a></li>
+                    <li class="page-item rlr-pagination__page-item"><a class="page-link rlr-pagination__page-link rlr-pagination__page-link--counter" href="#">...</a></li>
+                    <li class="page-item rlr-pagination__page-item"><a class="page-link rlr-pagination__page-link rlr-pagination__page-link--counter" href="#">8</a></li>
+                    <li class="page-item rlr-pagination__page-item"><a class="page-link rlr-pagination__page-link rlr-pagination__page-link--counter" href="#">9</a></li>
+                    <li class="page-item rlr-pagination__page-item"><a class="page-link rlr-pagination__page-link rlr-pagination__page-link--counter" href="#">10</a></li>
+                  </ul>
+                </li>
+                <li class="page-item rlr-pagination__page-item">
+                  <a class="page-link rlr-pagination__page-link rlr-pagination__page-link--next" href="#" aria-label="Next">
+                    <span aria-hidden="true">Next</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4.167 10h11.666m0 0L10 4.167M15.833 10 10 15.833" stroke="var(--body-color)" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </section>
+        </div>
       </div>
+      <div th:replace="common::footer"></div>
     </main>
-    <!-- Scripts -->
-    <script src="./vendors/navx/js/navigation.min.js" defer></script>
-    <script src="./js/main.js" defer></script>
+<div th:replace="common::footerJs"></div>
   </body>
 </html>

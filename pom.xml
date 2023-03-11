@@ -92,7 +92,7 @@
             <version>1.28.0</version>
         </dependency>
 
-        <!--引入该依赖不需要写set，get 和 tostring（）方法-->
+        <!--引入该依赖不需要写set，get 和 tostring（）方法,不过我的代码是生成的，所以这个可有可不有-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

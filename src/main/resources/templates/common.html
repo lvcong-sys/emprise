@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sa="http://www.w3.org/1999/xhtml">
   <head th:fragment="head">
     <meta charset="UTF-8" />
     <meta name="description" content="Your vacation, tours and travel theme needs are all met at emprise." />
@@ -12,6 +13,10 @@
     <link rel="preload" th:href="@{/vendors/rs6.css}" as="style" />
     <script th:src="@{/vendors/jquery.min.js}"></script>
     <link rel="stylesheet" th:href="@{/vendors/rs6.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrapt.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" th:href="@{/css/skins/default.css}"/>
+    <link rel="stylesheet" th:href="@{css/font.min.css}"/>
   </head>
 
   <body class="rlr-body">
@@ -23,7 +28,10 @@
         <div class="navigation-header">
           <div class="navigation-brand-text">
             <div class="rlr-logo rlr-logo__navbar-brand rlr-logo--default">
-              <a href="./home-page--rs1.html">
+              <a th:href="@{/index}" sa:notLogin>
+                <img th:src="@{/assets/svg/emprise-logo-dark.svg}" alt="#" class="" />
+              </a>
+              <a th:href="@{/user/index}" sa:login>
                 <img th:src="@{/assets/svg/emprise-logo-dark.svg}" alt="#" class="" />
               </a>
             </div>
@@ -36,7 +44,10 @@
           <div class="navigation-body-header rlr-navigation__body-header">
             <div class="navigation-brand-text">
               <div class="rlr-logo rlr-logo__navbar-brand rlr-logo--default">
-                <a href="./index.html">
+                <a th:href="@{/user/index}" sa:login>
+                  <img th:src="@{/assets/svg/emprise-logo-dark.svg}" alt="#" class="" />
+                </a>
+                <a th:href="@{/index}" sa:notLogin>
                   <img th:src="@{/assets/svg/emprise-logo-dark.svg}" alt="#" class="" />
                 </a>
               </div>
@@ -46,12 +57,15 @@
           <!-- 导航栏 -->
           <ul class="navigation-menu rlr-navigation__menu rlr-navigation__menu--main-links">
             <!-- 主页 -->
-            <li class="navigation-item is-active">
-              <a class="navigation-link" href="./home-page--rs1.html">主页</a>
+            <li class="navigation-item" sa:notLogin>
+              <a class="navigation-link" th:href="@{/index}">主页</a>
+            </li>
+            <li class="navigation-item" sa:login>
+              <a class="navigation-link" th:href="@{/user/index}">主页</a>
             </li>
             <!-- 地址下拉框其中的内容应该从数据库中取出，然后使用js进行渲染 -->
             <li class="navigation-item has-submenu">
-              <a class="navigation-link" href="#">地点</a>
+              <a class="navigation-link" th:href="@{/destination}">地点</a>
               <ul class="navigation-megamenu navigation-submenu navigation-megamenu-half">
                 <li class="navigation-megamenu-container">
                   <ul class="navigation-tabs">
@@ -67,42 +81,42 @@
                           <ul class="navigation-list">
                             <li class="rlr-icon-text">
                               <div class="rlr-icon-text__text-wrapper">
-                                <span class="rlr-icon-text__title"><a href="./search-results--left-sidebar.html"> Namibia</a></span>
+                                <span class="rlr-icon-text__title"><a href="destination.html"> Namibia</a></span>
                               </div>
                             </li>
                             <li class="rlr-icon-text">
                               <div class="rlr-icon-text__text-wrapper">
-                                <span class="rlr-icon-text__title"><a href="./search-results--left-sidebar.html"> Senegal</a></span>
+                                <span class="rlr-icon-text__title"><a href="destination.html"> Senegal</a></span>
                               </div>
                             </li>
                             <li class="rlr-icon-text">
                               <div class="rlr-icon-text__text-wrapper">
-                                <span class="rlr-icon-text__title"><a href="./search-results--left-sidebar.html"> South Africa</a></span>
+                                <span class="rlr-icon-text__title"><a href="destination.html"> South Africa</a></span>
                               </div>
                             </li>
                             <li class="rlr-icon-text">
                               <div class="rlr-icon-text__text-wrapper">
-                                <span class="rlr-icon-text__title"><a href="./search-results--left-sidebar.html"> Tanzania</a></span>
+                                <span class="rlr-icon-text__title"><a href="destination.html"> Tanzania</a></span>
                               </div>
                             </li>
                             <li class="rlr-icon-text">
                               <div class="rlr-icon-text__text-wrapper">
-                                <span class="rlr-icon-text__title"><a href="./search-results--left-sidebar.html"> Tunisia</a></span>
+                                <span class="rlr-icon-text__title"><a href="destination.html"> Tunisia</a></span>
                               </div>
                             </li>
                             <li class="rlr-icon-text">
                               <div class="rlr-icon-text__text-wrapper">
-                                <span class="rlr-icon-text__title"><a href="./search-results--left-sidebar.html"> Zambia</a></span>
+                                <span class="rlr-icon-text__title"><a href="destination.html"> Zambia</a></span>
                               </div>
                             </li>
                             <li class="rlr-icon-text">
                               <div class="rlr-icon-text__text-wrapper">
-                                <span class="rlr-icon-text__title"><a href="./search-results--left-sidebar.html"> Zanzibar</a></span>
+                                <span class="rlr-icon-text__title"><a href="destination.html"> Zanzibar</a></span>
                               </div>
                             </li>
                             <li class="rlr-icon-text">
                               <div class="rlr-icon-text__text-wrapper">
-                                <span class="rlr-icon-text__title"><a href="./search-results--left-sidebar.html"> Zimbabwe</a></span>
+                                <span class="rlr-icon-text__title"><a href="destination.html"> Zimbabwe</a></span>
                               </div>
                             </li>
                           </ul>
@@ -120,37 +134,37 @@
                             </li>
                             <li class="rlr-icon-text">
                               <div class="rlr-icon-text__text-wrapper">
-                                <span class="rlr-icon-text__title"><a href="./search-results--left-sidebar.html"> Azerbaijan</a></span>
+                                <span class="rlr-icon-text__title"><a href="destination.html"> Azerbaijan</a></span>
                               </div>
                             </li>
                             <li class="rlr-icon-text">
                               <div class="rlr-icon-text__text-wrapper">
-                                <span class="rlr-icon-text__title"><a href="./search-results--left-sidebar.html"> Bali</a></span>
+                                <span class="rlr-icon-text__title"><a href="destination.html"> Bali</a></span>
                               </div>
                             </li>
                             <li class="rlr-icon-text">
                               <div class="rlr-icon-text__text-wrapper">
-                                <span class="rlr-icon-text__title"><a href="./search-results--left-sidebar.html"> Bhutan</a></span>
+                                <span class="rlr-icon-text__title"><a href="destination.html"> Bhutan</a></span>
                               </div>
                             </li>
                             <li class="rlr-icon-text">
                               <div class="rlr-icon-text__text-wrapper">
-                                <span class="rlr-icon-text__title"><a href="./search-results--left-sidebar.html"> Cambodia</a></span>
+                                <span class="rlr-icon-text__title"><a href="destination.html"> Cambodia</a></span>
                               </div>
                             </li>
                             <li class="rlr-icon-text">
                               <div class="rlr-icon-text__text-wrapper">
-                                <span class="rlr-icon-text__title"><a href="./search-results--left-sidebar.html"> China</a></span>
+                                <span class="rlr-icon-text__title"><a href="destination.html"> China</a></span>
                               </div>
                             </li>
                             <li class="rlr-icon-text">
                               <div class="rlr-icon-text__text-wrapper">
-                                <span class="rlr-icon-text__title"><a href="./search-results--left-sidebar.html"> India</a></span>
+                                <span class="rlr-icon-text__title"><a href="destination.html"> India</a></span>
                               </div>
                             </li>
                             <li class="rlr-icon-text">
                               <div class="rlr-icon-text__text-wrapper">
-                                <span class="rlr-icon-text__title"><a href="./search-results--left-sidebar.html"> Indonesia</a></span>
+                                <span class="rlr-icon-text__title"><a href="destination.html"> Indonesia</a></span>
                               </div>
                             </li>
                           </ul>
@@ -164,37 +178,37 @@
                             </li>
                             <li class="rlr-icon-text">
                               <div class="rlr-icon-text__text-wrapper">
-                                <span class="rlr-icon-text__title"><a href="./search-results--left-sidebar.html"> Malaysia</a></span>
+                                <span class="rlr-icon-text__title"><a href="destination.html"> Malaysia</a></span>
                               </div>
                             </li>
                             <li class="rlr-icon-text">
                               <div class="rlr-icon-text__text-wrapper">
-                                <span class="rlr-icon-text__title"><a href="./search-results--left-sidebar.html"> Nepal</a></span>
+                                <span class="rlr-icon-text__title"><a href="destination.html"> Nepal</a></span>
                               </div>
                             </li>
                             <li class="rlr-icon-text">
                               <div class="rlr-icon-text__text-wrapper">
-                                <span class="rlr-icon-text__title"><a href="./search-results--left-sidebar.html"> Philippines</a></span>
+                                <span class="rlr-icon-text__title"><a href="destination.html"> Philippines</a></span>
                               </div>
                             </li>
                             <li class="rlr-icon-text">
                               <div class="rlr-icon-text__text-wrapper">
-                                <span class="rlr-icon-text__title"><a href="./search-results--left-sidebar.html"> Singapore</a></span>
+                                <span class="rlr-icon-text__title"><a href="destination.html"> Singapore</a></span>
                               </div>
                             </li>
                             <li class="rlr-icon-text">
                               <div class="rlr-icon-text__text-wrapper">
-                                <span class="rlr-icon-text__title"><a href="./search-results--left-sidebar.html"> Sri Lanka</a></span>
+                                <span class="rlr-icon-text__title"><a href="destination.html"> Sri Lanka</a></span>
                               </div>
                             </li>
                             <li class="rlr-icon-text">
                               <div class="rlr-icon-text__text-wrapper">
-                                <span class="rlr-icon-text__title"><a href="./search-results--left-sidebar.html"> Thailand</a></span>
+                                <span class="rlr-icon-text__title"><a href="destination.html"> Thailand</a></span>
                               </div>
                             </li>
                             <li class="rlr-icon-text">
                               <div class="rlr-icon-text__text-wrapper">
-                                <span class="rlr-icon-text__title"><a href="./search-results--left-sidebar.html"> Vietnam</a></span>
+                                <span class="rlr-icon-text__title"><a href="destination.html"> Vietnam</a></span>
                               </div>
                             </li>
                           </ul>
@@ -213,18 +227,43 @@
             -->
             <!-- 游记导航 -->
             <li class="navigation-item">
-              <a class="navigation-link" href="#"> 游记</a>
+              <a class="navigation-link" th:href="@{/blog}"> 游记</a>
             </li>
             <!-- 信息反馈 -->
             <li class="navigation-item">
-              <a class="navigation-link" href="./contact.html"> 联系我们 </a>
+              <a class="navigation-link" th:href="@{/contact}"> 联系我们 </a>
+            </li>
+            <!-- 企业介绍 -->
+            <li class="navigation-item">
+              <a class="navigation-link" th:href="@{/aboutUs}"> 关于我们 </a>
             </li>
           </ul>
           <!-- User actions menu -->
           <ul class="navigation-menu rlr-navigation__menu align-to-right">
             <!-- Signup Button -->
-            <li class="navigation-item">
-              <a th:href="@{user/login}" class="btn rlr-button rlr-button--medium rlr-button--rounded rlr-button--brand"> 登录 </a>
+            <li class="navigation-item" sa:notLogin>
+              <a th:href="@{/user/login}" class="btn rlr-button rlr-button--medium rlr-button--rounded rlr-button--brand"> 登录 </a>
+            </li>
+            <!-- 登录后的头部 -->
+            <li class="navigation-item" sa:login>
+              <a class="navigation-link" th:href="@{/user/toDetail}"> Sarah J <img class="ui right spaced avatar image" th:src="@{/assets/images/blog-single-avatar.png}" alt="account avatar" /> </a>
+              <ul class="navigation-dropdown">
+                <li class="navigation-dropdown-item">
+                  <a class="navigation-dropdown-link" th:href="@{/user/toDetail}">个人主页</a>
+                </li>
+                <li class="navigation-dropdown-item">
+                  <a class="navigation-dropdown-link" href="collections.html">收藏</a>
+                </li>
+                <li class="navigation-dropdown-item">
+                  <a class="navigation-dropdown-link" href="./search-results--no-sidebar.html">喜欢</a>
+                </li>
+                <li class="navigation-dropdown-item">
+                  <hr class="dropdown-divider rlr-dropdown__divider" />
+                </li>
+                <li class="navigation-dropdown-item">
+                  <a class="navigation-dropdown-link" th:href="@{/user/logout}">退出登录</a>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
@@ -300,7 +339,7 @@
           <!-- Footer copyright -->
           <div class="rlr-footer__legal__row rlr-footer__legal__row--bottom">
             <div class="rlr-footer__legal__row__col">
-              <span>2023 © by <a href="#">lvcong的毕设</a></span>
+              <span>2023 © by <a href="#">201910530940吕聪的毕设</a></span>
             </div>
           </div>
         </div>
@@ -309,8 +348,8 @@
   </main>
 
   <div th:fragment="footerJs">
-    <script src="./vendors/navx/js/navigation.min.js"></script>
-    <script src="./js/main.js"></script>
+    <script th:src="@{/vendors/navx/js/navigation.min.js}"></script>
+    <script th:src="@{/js/main.js}"></script>
   </div>
   </body>
 </html>

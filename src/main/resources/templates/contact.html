@@ -1,20 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Your vacation, tours and travel theme needs are all met at emprise." />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tour Travel Website Template | Emprise</title>
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/png" href="./assets/favicon.ico" />
-    <!-- Plugins CSS -->
-    <link rel="stylesheet" href="./styles/plugins.css" />
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="./styles/main.css" />
-  </head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sa="http://www.w3.org/1999/xhtml">
+<head th:replace="common::head"><title></title></head>
 
-  <body class="rlr-body">
-    <!-- Main Content -->
+<body class="rlr-body">
+<!-- 引用导航栏 -->
+<div th:replace="common::navigation"></div>
     <main id="rlr-main" class="rlr-main--fixed-top">
       <!-- Header banner -->
       <section class="rlr-section">
@@ -86,9 +77,8 @@
           </div>
         </div>
       </section>
+      <div th:replace="common::footer"></div>
     </main>
-    <!-- Scripts -->
-    <script src="./vendors/navx/js/navigation.min.js" defer></script>
-    <script src="./js/main.js" defer></script>
+<div th:replace="common::footerJs"></div>
   </body>
 </html>

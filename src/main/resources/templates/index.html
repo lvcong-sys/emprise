@@ -15,9 +15,7 @@
             <rs-module id="rev_slider_1_1" style="" data-version="6.5.15">
               <rs-slides>
                 <rs-slide style="position: absolute" data-key="rs-1" data-title="Slide" data-anim="d:20;f:center;" data-in="o:0;y:(100%);sx:2;sy:2;m:true;row:5;col:5;">
-                  <img src="./assets/images/rev-slider/slide-4.jpg" alt="" title="BG-Image.jpg" width="1600" height="646" class="rev-slidebg tp-rs-img" data-bg="f:contain;" data-no-retina />
-                  <!--
-        							-->
+                  <img th:src="@{/assets/images/rev-slider/slide-4.jpg}" alt="" title="BG-Image.jpg" width="1600" height="646" class="rev-slidebg tp-rs-img" data-bg="f:contain;" data-no-retina />
                   <rs-layer
                     id="slider-1-slide-1-layer-0"
                     data-type="text"
@@ -81,7 +79,7 @@
                     data-frame_1="st:1000;sp:1000;"
                     data-frame_999="o:0;st:w;"
                     style="z-index: 12; cursor: pointer"
-                    ><img src="./assets/images/rev-slider/Prev.png" alt="" class="tp-rs-img" width="48" height="48" data-no-retina />
+                    ><img th:src="@{/assets/images/rev-slider/Prev.png}" alt="" class="tp-rs-img" width="48" height="48" data-no-retina />
                   </rs-layer>
                   <!--
         
@@ -98,13 +96,13 @@
                     data-frame_1="st:1000;sp:1000;"
                     data-frame_999="o:0;st:w;"
                     style="z-index: 13; cursor: pointer"
-                    ><img src="./assets/images/rev-slider/Next.png" alt="" class="tp-rs-img" width="48" height="48" data-no-retina />
+                    ><img th:src="@{/assets/images/rev-slider/Next.png}" alt="" class="tp-rs-img" width="48" height="48" data-no-retina />
                   </rs-layer>
                   <!--
         
         							-->
                   <rs-layer id="slider-1-slide-1-layer-5" data-type="image" data-rsp_ch="on" data-xy="x:1094px;y:384px;" data-text="w:normal;" data-dim="w:64px;h:64px;" data-frame_1="e:power4.inOut;st:300;sp:1500;" data-frame_999="o:0;st:w;" style="z-index: 14"
-                    ><img src="./assets/images/rev-slider/Icon.png" alt="" class="tp-rs-img" width="64" height="64" data-no-retina />
+                    ><img th:src="@{/assets/images/rev-slider/Icon.png}" alt="" class="tp-rs-img" width="64" height="64" data-no-retina />
                   </rs-layer>
                   <!--
         
@@ -150,7 +148,7 @@
         -->
                 </rs-slide>
                 <rs-slide style="position: absolute" data-key="rs-2" data-title="Slide" data-anim="d:30;f:center;" data-in="o:0;sx:1.2;sy:1.2;row:5;col:5;" data-out="o:0;sx:0.5;sy:0.5;m:true;row:5;col:5;">
-                  <img src="./assets/images/rev-slider/slide-3.jpg" alt="" width="1920" height="1080" class="rev-slidebg tp-rs-img" data-bg="f:contain;" data-no-retina />
+                  <img th:src="@{/assets/images/rev-slider/slide-3.jpg}" alt="" width="1920" height="1080" class="rev-slidebg tp-rs-img" data-bg="f:contain;" data-no-retina />
                   <!--
         							-->
                   <rs-layer
@@ -216,7 +214,7 @@
                     data-frame_1="st:1000;sp:1000;"
                     data-frame_999="o:0;st:w;"
                     style="z-index: 12; cursor: pointer"
-                    ><img src="./assets/images/rev-slider/Prev.png" alt="" class="tp-rs-img" width="48" height="48" data-no-retina />
+                    ><img th:src="@{/assets/images/rev-slider/Prev.png}" alt="" class="tp-rs-img" width="48" height="48" data-no-retina />
                   </rs-layer>
                   <!--
         
@@ -233,13 +231,13 @@
                     data-frame_1="st:1000;sp:1000;"
                     data-frame_999="o:0;st:w;"
                     style="z-index: 13; cursor: pointer"
-                    ><img src="./assets/images/rev-slider/Next.png" alt="" class="tp-rs-img" width="48" height="48" data-no-retina />
+                    ><img th:src="@{/assets/images/rev-slider/Next.png}" alt="" class="tp-rs-img" width="48" height="48" data-no-retina />
                   </rs-layer>
                   <!--
         
         							-->
                   <rs-layer id="slider-1-slide-2-layer-5" data-type="image" data-rsp_ch="on" data-xy="x:1094px;y:384px;" data-text="w:normal;" data-dim="w:64px;h:64px;" data-frame_1="e:power4.inOut;st:300;sp:1500;" data-frame_999="o:0;st:w;" style="z-index: 14"
-                    ><img src="./assets/images/rev-slider/Icon.png" alt="" class="tp-rs-img" width="64" height="64" data-no-retina />
+                    ><img th:src="@{/assets/images/rev-slider/Icon.png}" alt="" class="tp-rs-img" width="64" height="64" data-no-retina />
                   </rs-layer>
                   <!--
         
@@ -432,10 +430,10 @@
                       <i class="rlr-icon-font flaticon-beach"> </i>
                     </div>
                     <header>
-                      <a href="./product-detail-page.html" class="rlr-category-card__title">
+                      <a href="destination-detail.html" class="rlr-category-card__title">
                         <h4>Beach Activity</h4>
                       </a>
-                      <a href="./product-detail-page.html" class="rlr-category-card__sub-title">
+                      <a href="destination-detail.html" class="rlr-category-card__sub-title">
                         <span>196 Activities</span>
                       </a>
                     </header>
@@ -451,10 +449,10 @@
                       <i class="rlr-icon-font flaticon-bungee"> </i>
                     </div>
                     <header>
-                      <a href="./product-detail-page.html" class="rlr-category-card__title">
+                      <a href="destination-detail.html" class="rlr-category-card__title">
                         <h4>Bungee Jump</h4>
                       </a>
-                      <a href="./product-detail-page.html" class="rlr-category-card__sub-title">
+                      <a href="destination-detail.html" class="rlr-category-card__sub-title">
                         <span>217 Activities</span>
                       </a>
                     </header>
@@ -470,10 +468,10 @@
                       <i class="rlr-icon-font flaticon-city-tours"> </i>
                     </div>
                     <header>
-                      <a href="./product-detail-page.html" class="rlr-category-card__title">
+                      <a href="destination-detail.html" class="rlr-category-card__title">
                         <h4>City Tours</h4>
                       </a>
-                      <a href="./product-detail-page.html" class="rlr-category-card__sub-title">
+                      <a href="destination-detail.html" class="rlr-category-card__sub-title">
                         <span>412 Activities</span>
                       </a>
                     </header>
@@ -489,10 +487,10 @@
                       <i class="rlr-icon-font flaticon-hiking"> </i>
                     </div>
                     <header>
-                      <a href="./product-detail-page.html" class="rlr-category-card__title">
+                      <a href="destination-detail.html" class="rlr-category-card__title">
                         <h4>Hiking Trips</h4>
                       </a>
-                      <a href="./product-detail-page.html" class="rlr-category-card__sub-title">
+                      <a href="destination-detail.html" class="rlr-category-card__sub-title">
                         <span>371 Activities</span>
                       </a>
                     </header>
@@ -508,10 +506,10 @@
                       <i class="rlr-icon-font flaticon-jungle"> </i>
                     </div>
                     <header>
-                      <a href="./product-detail-page.html" class="rlr-category-card__title">
+                      <a href="destination-detail.html" class="rlr-category-card__title">
                         <h4>Jungle Safari</h4>
                       </a>
-                      <a href="./product-detail-page.html" class="rlr-category-card__sub-title">
+                      <a href="destination-detail.html" class="rlr-category-card__sub-title">
                         <span>712 Activities</span>
                       </a>
                     </header>
@@ -560,17 +558,17 @@
                         </button>
                         <span class="rlr-product-detail-header__helptext rlr-js-helptext"></span>
                       </div>
-                      <a href="./product-detail-page.html">
+                      <a href="destination-detail.html">
                         <div class="swiper rlr-js-product-multi-image-swiper">
                           <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                              <img itemprop="image" data-sizes="auto" data-src="./assets/images/product-images/small/01.jpg" data-srcset="./assets/images/product-images/small/01.jpg" class="lazyload" alt="product-image" />
+                              <img itemprop="image" data-sizes="auto" th:src="@{/assets/images/product-images/small/01.jpg}" class="lazyload" alt="product-image" />
                             </div>
                             <div class="swiper-slide">
-                              <img itemprop="image" data-sizes="auto" data-src="./assets/images/product-images/small/02.jpg" data-srcset="./assets/images/product-images/small/02.jpg" class="lazyload" alt="product-image" />
+                              <img itemprop="image" data-sizes="auto" th:src="@{/assets/images/product-images/small/02.jpg}" class="lazyload" alt="product-image" />
                             </div>
                             <div class="swiper-slide">
-                              <img itemprop="image" data-sizes="auto" data-src="./assets/images/product-images/small/03.jpg" data-srcset="./assets/images/product-images/small/03.jpg" class="lazyload" alt="product-image" />
+                              <img itemprop="image" data-sizes="auto" th:src="@{/assets/images/product-images/small/03.jpg}" class="lazyload" alt="product-image" />
                             </div>
                           </div>
                           <button type="button" class="btn rlr-button splide__arrow splide__arrow--prev" aria-label="prev button">
@@ -586,15 +584,15 @@
                       <!-- Product card header -->
                       <header class="rlr-product-card__header">
                         <div>
-                          <a href="./product-detail-page.html" class="rlr-product-card__anchor-title">
+                          <a href="destination-detail.html" class="rlr-product-card__anchor-title">
                             <h2 class="rlr-product-card__title" itemprop="name">Full-Day Catamaran Cruise to Hvar &amp; Pakleni Islands</h2>
                           </a>
                           <div>
-                            <a href="./product-detail-page.html" class="rlr-product-card__anchor-cat">
+                            <a href="destination-detail.html" class="rlr-product-card__anchor-cat">
                               <span class="rlr-product-card__sub-title">Beach Tours</span>
                             </a>
                             <span class="rlr-product-card__sub-title">|</span>
-                            <a href="./product-detail-page.html" class="rlr-product-card__anchor-sub-cat">
+                            <a href="destination-detail.html" class="rlr-product-card__anchor-sub-cat">
                               <span class="rlr-product-card__sub-title">Dubronik</span>
                             </a>
                           </div>
@@ -636,17 +634,17 @@
                         </button>
                         <span class="rlr-product-detail-header__helptext rlr-js-helptext"></span>
                       </div>
-                      <a href="./product-detail-page.html">
+                      <a href="destination-detail.html">
                         <div class="swiper rlr-js-product-multi-image-swiper">
                           <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                              <img itemprop="image" data-sizes="auto" data-src="./assets/images/product-images/small/02.jpg" data-srcset="./assets/images/product-images/small/02.jpg" class="lazyload" alt="product-image" />
+                              <img itemprop="image" data-sizes="auto" th:src="@{/assets/images/product-images/small/02.jpg}"class="lazyload" alt="product-image" />
                             </div>
                             <div class="swiper-slide">
-                              <img itemprop="image" data-sizes="auto" data-src="./assets/images/product-images/small/02.jpg" data-srcset="./assets/images/product-images/small/02.jpg" class="lazyload" alt="product-image" />
+                              <img itemprop="image" data-sizes="auto" th:src="@{/assets/images/product-images/small/02.jpg}" class="lazyload" alt="product-image" />
                             </div>
                             <div class="swiper-slide">
-                              <img itemprop="image" data-sizes="auto" data-src="./assets/images/product-images/small/03.jpg" data-srcset="./assets/images/product-images/small/03.jpg" class="lazyload" alt="product-image" />
+                              <img itemprop="image" data-sizes="auto" th:src="@{/assets/images/product-images/small/03.jpg}" class="lazyload" alt="product-image" />
                             </div>
                           </div>
                           <button type="button" class="btn rlr-button splide__arrow splide__arrow--prev" aria-label="prev button">
@@ -662,15 +660,15 @@
                       <!-- Product card header -->
                       <header class="rlr-product-card__header">
                         <div>
-                          <a href="./product-detail-page.html" class="rlr-product-card__anchor-title">
+                          <a href="destination-detail.html" class="rlr-product-card__anchor-title">
                             <h2 class="rlr-product-card__title" itemprop="name">Circle Line: Complete Manhattan Island Cruise</h2>
                           </a>
                           <div>
-                            <a href="./product-detail-page.html" class="rlr-product-card__anchor-cat">
+                            <a href="destination-detail.html" class="rlr-product-card__anchor-cat">
                               <span class="rlr-product-card__sub-title">City Tour</span>
                             </a>
                             <span class="rlr-product-card__sub-title">|</span>
-                            <a href="./product-detail-page.html" class="rlr-product-card__anchor-sub-cat">
+                            <a href="destination-detail.html" class="rlr-product-card__anchor-sub-cat">
                               <span class="rlr-product-card__sub-title">New York</span>
                             </a>
                           </div>
@@ -712,7 +710,7 @@
                         </button>
                         <span class="rlr-product-detail-header__helptext rlr-js-helptext"></span>
                       </div>
-                      <a href="./product-detail-page.html">
+                      <a href="destination-detail.html">
                         <div class="swiper rlr-js-product-multi-image-swiper">
                           <div class="swiper-wrapper">
                             <div class="swiper-slide">
@@ -738,15 +736,15 @@
                       <!-- Product card header -->
                       <header class="rlr-product-card__header">
                         <div>
-                          <a href="./product-detail-page.html" class="rlr-product-card__anchor-title">
+                          <a href="destination-detail.html" class="rlr-product-card__anchor-title">
                             <h2 class="rlr-product-card__title" itemprop="name">Blue Lagoon &amp; 3 Islands Half-day Trip from Split</h2>
                           </a>
                           <div>
-                            <a href="./product-detail-page.html" class="rlr-product-card__anchor-cat">
+                            <a href="destination-detail.html" class="rlr-product-card__anchor-cat">
                               <span class="rlr-product-card__sub-title">Hiking Tour</span>
                             </a>
                             <span class="rlr-product-card__sub-title">|</span>
-                            <a href="./product-detail-page.html" class="rlr-product-card__anchor-sub-cat">
+                            <a href="destination-detail.html" class="rlr-product-card__anchor-sub-cat">
                               <span class="rlr-product-card__sub-title">Stoke on Trent</span>
                             </a>
                           </div>
@@ -788,7 +786,7 @@
                         </button>
                         <span class="rlr-product-detail-header__helptext rlr-js-helptext"></span>
                       </div>
-                      <a href="./product-detail-page.html">
+                      <a href="destination-detail.html">
                         <div class="swiper rlr-js-product-multi-image-swiper">
                           <div class="swiper-wrapper">
                             <div class="swiper-slide">
@@ -814,15 +812,15 @@
                       <!-- Product card header -->
                       <header class="rlr-product-card__header">
                         <div>
-                          <a href="./product-detail-page.html" class="rlr-product-card__anchor-title">
+                          <a href="destination-detail.html" class="rlr-product-card__anchor-title">
                             <h2 class="rlr-product-card__title" itemprop="name">Private Tour: Montenegro Day Trip from Dubrovnik</h2>
                           </a>
                           <div>
-                            <a href="./product-detail-page.html" class="rlr-product-card__anchor-cat">
+                            <a href="destination-detail.html" class="rlr-product-card__anchor-cat">
                               <span class="rlr-product-card__sub-title">Hiking Tour</span>
                             </a>
                             <span class="rlr-product-card__sub-title">|</span>
-                            <a href="./product-detail-page.html" class="rlr-product-card__anchor-sub-cat">
+                            <a href="destination-detail.html" class="rlr-product-card__anchor-sub-cat">
                               <span class="rlr-product-card__sub-title">Stoke on Trent</span>
                             </a>
                           </div>
@@ -864,7 +862,7 @@
                         </button>
                         <span class="rlr-product-detail-header__helptext rlr-js-helptext"></span>
                       </div>
-                      <a href="./product-detail-page.html">
+                      <a href="destination-detail.html">
                         <div class="swiper rlr-js-product-multi-image-swiper">
                           <div class="swiper-wrapper">
                             <div class="swiper-slide">
@@ -890,15 +888,15 @@
                       <!-- Product card header -->
                       <header class="rlr-product-card__header">
                         <div>
-                          <a href="./product-detail-page.html" class="rlr-product-card__anchor-title">
+                          <a href="destination-detail.html" class="rlr-product-card__anchor-title">
                             <h2 class="rlr-product-card__title" itemprop="name">Old Town, Dubai Creek, Souks, and Street Food Tour</h2>
                           </a>
                           <div>
-                            <a href="./product-detail-page.html" class="rlr-product-card__anchor-cat">
+                            <a href="destination-detail.html" class="rlr-product-card__anchor-cat">
                               <span class="rlr-product-card__sub-title">Hiking Tour</span>
                             </a>
                             <span class="rlr-product-card__sub-title">|</span>
-                            <a href="./product-detail-page.html" class="rlr-product-card__anchor-sub-cat">
+                            <a href="destination-detail.html" class="rlr-product-card__anchor-sub-cat">
                               <span class="rlr-product-card__sub-title">Stoke on Trent</span>
                             </a>
                           </div>
@@ -940,7 +938,7 @@
                         </button>
                         <span class="rlr-product-detail-header__helptext rlr-js-helptext"></span>
                       </div>
-                      <a href="./product-detail-page.html">
+                      <a href="destination-detail.html">
                         <div class="swiper rlr-js-product-multi-image-swiper">
                           <div class="swiper-wrapper">
                             <div class="swiper-slide">
@@ -966,15 +964,15 @@
                       <!-- Product card header -->
                       <header class="rlr-product-card__header">
                         <div>
-                          <a href="./product-detail-page.html" class="rlr-product-card__anchor-title">
+                          <a href="destination-detail.html" class="rlr-product-card__anchor-title">
                             <h2 class="rlr-product-card__title" itemprop="name">Hamilton Live! Walking Tour in lower Manhattan</h2>
                           </a>
                           <div>
-                            <a href="./product-detail-page.html" class="rlr-product-card__anchor-cat">
+                            <a href="destination-detail.html" class="rlr-product-card__anchor-cat">
                               <span class="rlr-product-card__sub-title">Hiking Tour</span>
                             </a>
                             <span class="rlr-product-card__sub-title">|</span>
-                            <a href="./product-detail-page.html" class="rlr-product-card__anchor-sub-cat">
+                            <a href="destination-detail.html" class="rlr-product-card__anchor-sub-cat">
                               <span class="rlr-product-card__sub-title">Stoke on Trent</span>
                             </a>
                           </div>
@@ -1019,7 +1017,7 @@
           <div class="rlr-masonary-grid__container">
             <div class="rlr-masonary-grid__one">
               <!-- Destination card -->
-              <a class="rlr-destination-card" href="./search-results--left-sidebar.html">
+              <a class="rlr-destination-card" href="destination.html">
                 <img data-sizes="auto" data-src="./assets/images/dest/01.jpg" data-srcset="./assets/images/dest/01@2x.jpg 2x" class="rlr-destination-card__img lazyload" alt="..." />
                 <span class="rlr-badge rlr-badge--left rlr-badge-- rlr-badge--abs rlr-badge--abs-dest"> 200+ </span>
                 <div class="rlr-destination-card__info rlr-destination-card__info--left rlr-destination-card__info--bottom">
@@ -1030,7 +1028,7 @@
             </div>
             <div class="rlr-masonary-grid__two">
               <!-- Destination card -->
-              <a class="rlr-destination-card" href="./search-results--left-sidebar.html">
+              <a class="rlr-destination-card" href="destination.html">
                 <img data-sizes="auto" data-src="./assets/images/dest/02.jpg" data-srcset="./assets/images/dest/02@2x.jpg 2x" class="rlr-destination-card__img lazyload" alt="..." />
                 <span class="rlr-badge rlr-badge--left rlr-badge-- rlr-badge--abs rlr-badge--abs-dest"> 320 Tours </span>
                 <div class="rlr-destination-card__info rlr-destination-card__info--left rlr-destination-card__info--bottom">
@@ -1041,7 +1039,7 @@
             </div>
             <div class="rlr-masonary-grid__three">
               <!-- Destination card -->
-              <a class="rlr-destination-card" href="./search-results--left-sidebar.html">
+              <a class="rlr-destination-card" href="destination.html">
                 <img data-sizes="auto" data-src="./assets/images/dest/03.jpg" data-srcset="./assets/images/dest/03@2x.jpg 2x" class="rlr-destination-card__img lazyload" alt="..." />
                 <span class="rlr-badge rlr-badge--left rlr-badge-- rlr-badge--abs rlr-badge--abs-dest"> 58 Tours </span>
                 <div class="rlr-destination-card__info rlr-destination-card__info--left rlr-destination-card__info--bottom">
@@ -1052,7 +1050,7 @@
             </div>
             <div class="rlr-masonary-grid__four">
               <!-- Destination card -->
-              <a class="rlr-destination-card" href="./search-results--left-sidebar.html">
+              <a class="rlr-destination-card" href="destination.html">
                 <img data-sizes="auto" data-src="./assets/images/dest/04.jpg" data-srcset="./assets/images/dest/04@2x.jpg 2x" class="rlr-destination-card__img lazyload" alt="..." />
                 <span class="rlr-badge rlr-badge--left rlr-badge-- rlr-badge--abs rlr-badge--abs-dest"> 406 Tours </span>
                 <div class="rlr-destination-card__info rlr-destination-card__info--left rlr-destination-card__info--bottom">
@@ -1063,7 +1061,7 @@
             </div>
             <div class="rlr-masonary-grid__five">
               <!-- Destination card -->
-              <a class="rlr-destination-card" href="./search-results--left-sidebar.html">
+              <a class="rlr-destination-card" href="destination.html">
                 <img data-sizes="auto" data-src="./assets/images/dest/05.jpg" data-srcset="./assets/images/dest/05@2x.jpg 2x" class="rlr-destination-card__img lazyload" alt="..." />
                 <span class="rlr-badge rlr-badge--left rlr-badge-- rlr-badge--abs rlr-badge--abs-dest"> 37 Tours </span>
                 <div class="rlr-destination-card__info rlr-destination-card__info--left rlr-destination-card__info--bottom">
@@ -1074,7 +1072,7 @@
             </div>
             <div class="rlr-masonary-grid__six">
               <!-- Destination card -->
-              <a class="rlr-destination-card" href="./search-results--left-sidebar.html">
+              <a class="rlr-destination-card" href="destination.html">
                 <img data-sizes="auto" data-src="./assets/images/dest/06.jpg" data-srcset="./assets/images/dest/06@2x.jpg 2x" class="rlr-destination-card__img lazyload" alt="..." />
                 <span class="rlr-badge rlr-badge--left rlr-badge-- rlr-badge--abs rlr-badge--abs-dest"> 74 Tours </span>
                 <div class="rlr-destination-card__info rlr-destination-card__info--left rlr-destination-card__info--bottom">
@@ -1096,7 +1094,7 @@
               <h2 class="rlr-section__title--main">畅销项目</h2>
             </div>
             <div class="button-row">
-              <a href="./search-results--left-sidebar.html" class="btn rlr-button rlr-button--large rlr-button--rounded rlr-button--brand"> 查看所有 </a>
+              <a href="destination.html" class="btn rlr-button rlr-button--large rlr-button--rounded rlr-button--brand"> 查看所有 </a>
             </div>
           </div>
           <div class="row rlr-featured__cards">
@@ -1105,7 +1103,7 @@
               <article class="rlr-product-card rlr-product-card--featured" itemscope itemtype="https://schema.org/Product">
                 <!-- Image -->
                 <figure class="rlr-product-card__image-wrapper">
-                  <img itemprop="image" data-src="./assets/images/product-images/small/featured-thumb-01.jpg" data-srcset="./assets/images/product-images/small/featured-thumb-01.jpg" data-sizes="auto" class="lazyload" alt="" />
+                  <img itemprop="image" th:src="@{/assets/images/product-images/small/featured-thumb-01.jpg}" data-sizes="auto" class="lazyload" alt="" />
                 </figure>
                 <!-- Card body -->
                 <div class="rlr-product-card--featured__inner">
@@ -1122,11 +1120,11 @@
                         </button>
                         <span class="rlr-product-detail-header__helptext rlr-js-helptext"></span>
                       </div>
-                      <a href="./product-detail-page.html" class="btn rlr-button product-card-buttonrlr-button--medium rlr-button--rounded rlr-button--brand"> Explore </a>
+                      <a href="destination-detail.html" class="btn rlr-button product-card-buttonrlr-button--medium rlr-button--rounded rlr-button--brand"> Explore </a>
                     </div>
                   </div>
                 </div>
-                <a href="./product-detail-page.html" class="rlr-product-card__anchor rlr-product-card__anchor--featured"></a>
+                <a href="destination-detail.html" class="rlr-product-card__anchor rlr-product-card__anchor--featured"></a>
               </article>
               <!-- Summary -->
               <div class="rlr-product-card--featured__summary">
@@ -1156,11 +1154,11 @@
                         </button>
                         <span class="rlr-product-detail-header__helptext rlr-js-helptext"></span>
                       </div>
-                      <a href="./product-detail-page.html" class="btn rlr-button product-card-buttonrlr-button--medium rlr-button--rounded rlr-button--brand"> Explore </a>
+                      <a href="destination-detail.html" class="btn rlr-button product-card-buttonrlr-button--medium rlr-button--rounded rlr-button--brand"> Explore </a>
                     </div>
                   </div>
                 </div>
-                <a href="./product-detail-page.html" class="rlr-product-card__anchor rlr-product-card__anchor--featured"></a>
+                <a href="destination-detail.html" class="rlr-product-card__anchor rlr-product-card__anchor--featured"></a>
               </article>
               <!-- Summary -->
               <div class="rlr-product-card--featured__summary">
@@ -1190,11 +1188,11 @@
                         </button>
                         <span class="rlr-product-detail-header__helptext rlr-js-helptext"></span>
                       </div>
-                      <a href="./product-detail-page.html" class="btn rlr-button product-card-buttonrlr-button--medium rlr-button--rounded rlr-button--brand"> Explore </a>
+                      <a href="destination-detail.html" class="btn rlr-button product-card-buttonrlr-button--medium rlr-button--rounded rlr-button--brand"> Explore </a>
                     </div>
                   </div>
                 </div>
-                <a href="./product-detail-page.html" class="rlr-product-card__anchor rlr-product-card__anchor--featured"></a>
+                <a href="destination-detail.html" class="rlr-product-card__anchor rlr-product-card__anchor--featured"></a>
               </article>
               <!-- Summary -->
               <div class="rlr-product-card--featured__summary">
@@ -1217,7 +1215,7 @@
               <div class="rlr-support-card rlr-support-card--sale">
                 <div class="rlr-support-card__content">
                   <div class="rlr-support-card__img-wrapper">
-                    <img src="./assets/svg/headset.svg" alt="headset" />
+                    <img th:src="@{/assets/svg/headset.svg}" alt="headset" />
                   </div>
                   <h2 class="rlr-support-card__title">售后</h2>
                   <p class="rlr-support-card__text">sales@emprise.tours</p>
@@ -1229,7 +1227,7 @@
               <div class="rlr-support-card rlr-support-card--help">
                 <div class="rlr-support-card__content">
                   <div class="rlr-support-card__img-wrapper">
-                    <img src="./assets/svg/help-circle.svg" alt="headset" />
+                    <img th:src="@{/assets/svg/help-circle.svg}" alt="headset" />
                   </div>
                   <h2 class="rlr-support-card__title">帮助 &amp; 支持</h2>
                   <p class="rlr-support-card__text">sales@emprise.tours</p>
@@ -1253,8 +1251,8 @@
       window.RS_MODULES.moduleWaiting = window.RS_MODULES.moduleWaiting || {};
       window.RS_MODULES.type = "compiled";
     </script>
-    <script src="./vendors/rbtools.min.js"></script>
-    <script src="./vendors/rs6.min.js"></script>
+    <script th:src="@{/vendors/rbtools.min.js}"></script>
+    <script th:src="@{/vendors/rs6.min.js}"></script>
     <script>
       function setREVStartSize(e) {
         //window.requestAnimationFrame(function() {
